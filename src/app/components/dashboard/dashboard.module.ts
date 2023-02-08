@@ -12,10 +12,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
-
-
-
-
 @NgModule({
   declarations: [
     DashboardComponent,

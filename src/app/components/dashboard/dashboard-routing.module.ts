@@ -6,7 +6,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   {path: '',component: DashboardComponent},
-  {path: 'abm',component: AbmComponent}
+  {path: 'abm',component: AbmComponent},
+  {path: 'dashboard',component: DashboardComponent},
 ];
 
 @NgModule({

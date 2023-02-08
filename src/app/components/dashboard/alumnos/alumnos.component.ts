@@ -1,7 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Alumno, Estatus } from 'src/app/interfaces/alumno';
+
+import { AbmComponent } from '../abm/abm.component';
 
 @Component({
   selector: 'app-alumnos',
@@ -9,6 +11,8 @@ import { Alumno, Estatus } from 'src/app/interfaces/alumno';
   styleUrls: ['./alumnos.component.scss']
 })
 export class AlumnosComponent {
+
+  
 
   alumnos: Alumno[] = [
     {cod: 1, nombre: 'Maria', apellido: 'Luna', estatus: Estatus.Activo},
@@ -47,7 +51,6 @@ export class AlumnosComponent {
   }
 
   // ngOnInit(): void {
-
   // }
 
     // search
@@ -61,6 +64,14 @@ export class AlumnosComponent {
       const index = this.alumnos.indexOf(alumno);
       this.alumnos.splice(index, 1);
       this.dataSource = new MatTableDataSource<Alumno>(this.alumnos); //actualizar la data en la tabla después de eliminar un alumno
+      
     }
+
+
+  //actualizar la tabla con el nuevo alumno
+  agregarAlumno(alumno: Alumno){
+    this.alumnos.push(alumno);
+    console.log(this.alumnos);
+  }
 
 }
