@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Alumno } from 'src/app/interfaces/alumno';
+import { AlumnoService } from 'src/app/services/alumno.service';
 
 @Component({
   selector: 'app-abm',
@@ -11,9 +12,9 @@ import { Alumno } from 'src/app/interfaces/alumno';
 export class AbmComponent  {
 
   form: FormGroup;
-nuevoAlumno: any;
+// nuevoAlumno: any;
 
-  constructor(private fb: FormBuilder, private router:Router){
+  constructor(private fb: FormBuilder, private router:Router, private _alumnoService: AlumnoService){
   
     //formulario para nuevo alumno
     this.form = this.fb.group({
@@ -25,19 +26,22 @@ nuevoAlumno: any;
   }
   
   // agregar nuevo alumno
-  agregar(){
+  agregarAlumno(){
     console.log(this.form);
 
-    const alumno: Alumno ={
+    const nuevoAlumno: Alumno ={
       cod: this.form.value.cod,
       nombre: this.form.value.nombre,
       apellido: this.form.value.apellido,
       estatus: this.form.value.estatus
     }
 
-    console.log(alumno);
+    // console.log(user);
+
+    this._alumnoService.agregarAlumno(nuevoAlumno);
+
     this.router.navigate(['/dashboard'])
-    console.log(alumno);
+  
   
   }
 

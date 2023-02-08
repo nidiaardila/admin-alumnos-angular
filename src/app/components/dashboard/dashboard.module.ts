@@ -10,6 +10,7 @@ import { AbmComponent } from './abm/abm.component';
 import { AlumnosComponent } from './alumnos/alumnos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+// import { DirectivaPersonalizadaDirective } from 'src/app/directives/directiva-personalizada.directive';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     AbmComponent,
     AlumnosComponent,
     NavbarComponent,
-    ToolbarComponent,
+    ToolbarComponent
+    // DirectivaPersonalizadaDirective
+
     
   ],
   imports: [

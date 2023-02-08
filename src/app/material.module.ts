@@ -7,12 +7,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
-
-
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatOptionModule } from '@angular/material/core';
+
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [],
@@ -25,13 +27,13 @@ import { MatOptionModule } from '@angular/material/core';
     MatFormFieldModule,
     MatPaginatorModule,
     MatButtonModule,
-
     MatInputModule,
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
-    MatOptionModule
+    MatOptionModule,
 
+    HttpClientModule
   
   ],
   exports : [
@@ -43,12 +45,15 @@ import { MatOptionModule } from '@angular/material/core';
     MatFormFieldModule,
     MatPaginatorModule,
     MatButtonModule,
-
     MatInputModule,
     MatSidenavModule,
     MatSidenavModule,
     MatListModule,
-    MatOptionModule
+    MatOptionModule,
+
+    HttpClientModule
+
+   
    
   ]
 })
