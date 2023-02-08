@@ -3,11 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MaterialModule } from '../../material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { DashboardComponent } from './dashboard.component';
 import { AbmComponent } from './abm/abm.component';
 import { AlumnosComponent } from './alumnos/alumnos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+
+
+
+
 
 
 @NgModule({
@@ -16,12 +22,14 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     AbmComponent,
     AlumnosComponent,
     NavbarComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }
