@@ -11,10 +11,8 @@ import { AlumnoService } from 'src/app/services/alumno.service';
 })
 export class AbmComponent  {
 
-  
-
   form: FormGroup;
-// nuevoAlumno: any;
+
 
   constructor(private fb: FormBuilder, private router:Router, private _alumnoService: AlumnoService){
   
@@ -25,6 +23,7 @@ export class AbmComponent  {
       apellido: ['', Validators.required],
       estatus: ['Activo', Validators.required]
     })
+
 
   }
   
@@ -59,6 +58,9 @@ export class AbmComponent  {
   //   this.router.navigate(['/dashboard'])
   //   console.log(editarAlumno)
   // }  
+
+
+  
   
 
 }

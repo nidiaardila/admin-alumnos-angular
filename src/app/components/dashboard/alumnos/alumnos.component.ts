@@ -14,7 +14,6 @@ import { AlumnoService } from 'src/app/services/alumno.service';
 })
 export class AlumnosComponent {
 
-
   // alumnos: Alumno[] = [
   //   {cod: 1, nombre: 'Maria', apellido: 'Luna', estatus: Estatus.Activo},
   //   {cod: 2, nombre: 'Antonio', apellido: 'Cordoba', estatus:  Estatus.Graduado},
@@ -39,8 +38,8 @@ export class AlumnosComponent {
   // ]
 
   alumnos: Alumno[] = [];
- 
-  displayedColumns: string[] = ['cod', 'nombre', 'apellido', 'estatus', 'acciones'];
+  displayedColumns: string[] = ['cod', 'nombreCompleto','estatus', 'acciones'];
+  // displayedColumns: string[] = ['cod', 'nombre', 'apellido', 'estatus', 'acciones'];
   // dataSource = new MatTableDataSource(this.alumnos);
   dataSource!: MatTableDataSource<any>;
 
@@ -75,6 +74,10 @@ export class AlumnosComponent {
       this.dataSource = new MatTableDataSource<Alumno>(this.alumnos); //actualizar la data en la tabla después de eliminar un alumno
       
     }
+
+   
+  
+   
 
 
 }

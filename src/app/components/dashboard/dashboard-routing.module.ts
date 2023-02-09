@@ -8,6 +8,7 @@ const routes: Routes = [
   {path: '',component: DashboardComponent},
   {path: 'abm',component: AbmComponent},
   {path: 'dashboard',component: DashboardComponent},
+  
 ];
 
 @NgModule({
