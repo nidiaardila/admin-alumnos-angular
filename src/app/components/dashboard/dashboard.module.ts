@@ -10,7 +10,9 @@ import { AbmComponent } from './abm/abm.component';
 import { AlumnosComponent } from './alumnos/alumnos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-// import { DirectivaPersonalizadaDirective } from 'src/app/directives/directiva-personalizada.directive';
+import { NombreCompletoPipe } from 'src/app/pipes/nombre-completo.pipe';
+import { TamanoFuenteDirective } from 'src/app/directives/tamano-fuente.directive';
+
 
 
 @NgModule({
@@ -19,8 +21,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     AbmComponent,
     AlumnosComponent,
     NavbarComponent,
-    ToolbarComponent
-    // DirectivaPersonalizadaDirective
+    ToolbarComponent,
+    NombreCompletoPipe,
+    TamanoFuenteDirective
+    
 
     
   ],
@@ -29,6 +33,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     DashboardRoutingModule,
     MaterialModule,
     ReactiveFormsModule
+    
   ]
 })
 export class DashboardModule { }

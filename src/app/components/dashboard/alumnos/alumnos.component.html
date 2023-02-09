@@ -19,30 +19,37 @@
   <table mat-table [dataSource]="dataSource" >
   
     <ng-container matColumnDef="cod">
-      <th mat-header-cell *matHeaderCellDef> Cod. </th>
+      <th mat-header-cell *matHeaderCellDef appTamanoFuente> Cod. </th>
       <td mat-cell *matCellDef="let element"> {{element.cod}} </td>
     </ng-container>
   
     <ng-container matColumnDef="nombre">
-      <th mat-header-cell *matHeaderCellDef> Nombre </th>
-      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      <th mat-header-cell *matHeaderCellDef appTamanoFuente> Nombre </th>
+      <td mat-cell *matCellDef="let element" > {{element.nombre}} </td>
     </ng-container>
   
     <ng-container matColumnDef="apellido">
-      <th mat-header-cell *matHeaderCellDef> Apellido </th>
+      <th mat-header-cell *matHeaderCellDef appTamanoFuente> Apellido </th>
       <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
     </ng-container>
   
     <ng-container matColumnDef="estatus">
-      <th mat-header-cell *matHeaderCellDef> Estatus </th>
+      <th mat-header-cell *matHeaderCellDef appTamanoFuente> Estatus </th>
       <td mat-cell *matCellDef="let element"> {{element.estatus}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="acciones">
+    <!-- <ng-container matColumnDef="acciones">
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
       <td mat-cell *matCellDef="let element"> 
-        <!-- <a><mat-icon class="acciones" style="color:rgb(3, 3, 118)">search</mat-icon></a>  -->
-        <a><mat-icon class="acciones" style="color:rgb(96, 123, 85)">edit</mat-icon></a> 
+        <a routerLink="/dashboard/abm" ><mat-icon class="acciones" style="color:rgb(96, 123, 85)">edit</mat-icon></a> 
+        <a (click)="eliminar(element)"><mat-icon class="acciones" style="color:rgb(200, 47, 47)">delete</mat-icon></a>  
+      </td>
+    </ng-container> -->
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef appTamanoFuente> Acciones </th>
+      <td mat-cell *matCellDef="let element;  let i = index"> 
+        <a routerLink="/dashboard/abm/{{ i }}" ><mat-icon class="acciones" style="color:rgb(96, 123, 85)">edit</mat-icon></a> 
         <a (click)="eliminar(element)"><mat-icon class="acciones" style="color:rgb(200, 47, 47)">delete</mat-icon></a>  
       </td>
     </ng-container>
@@ -64,4 +71,6 @@
 <mat-icon>sentiment_dissatisfied</mat-icon>
 <h1 style="color: red;"> No hay alumnos registrados... </h1> 
 </div>
+
+
 

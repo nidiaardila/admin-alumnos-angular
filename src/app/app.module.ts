@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material.module';
+// import { TamanoFuenteDirective } from './directives/tamano-fuente.directive';
+// import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
 
 // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -13,14 +15,16 @@ import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // TamanoFuenteDirective
+    // NombreCompletoPipe
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    MaterialModule
     // FormsModule,
     // ReactiveFormsModule
     

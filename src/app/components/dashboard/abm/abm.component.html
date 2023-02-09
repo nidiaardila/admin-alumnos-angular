@@ -1,7 +1,7 @@
 <div class="container">
     <app-toolbar></app-toolbar>
     <mat-toolbar >
-        <h1 class="title"> Nuevo Alumno </h1>
+        <h1 class="title" >  Alumno </h1>
     </mat-toolbar>
 
     <form [formGroup]="form" (ngSubmit)="agregarAlumno()" class="form mt-4">
@@ -35,7 +35,7 @@
                 <mat-icon>done</mat-icon>
                 Aceptar
               </button>
-              <button mat-fab extended color="warn" class="agregar mt-4" >
+              <button type="reset" routerLink="/dashboard" mat-fab extended color="warn" class="agregar mt-4" >
                 <mat-icon>clear</mat-icon>
                 Cancelar
               </button>

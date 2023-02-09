@@ -4,7 +4,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Alumno, Estatus } from 'src/app/interfaces/alumno';
 import { AlumnoService } from 'src/app/services/alumno.service';
 
-import { AbmComponent } from '../abm/abm.component';
+
+// import { AbmComponent } from '../abm/abm.component';
 
 @Component({
   selector: 'app-alumnos',
@@ -61,15 +62,13 @@ export class AlumnosComponent {
     this.dataSource = new MatTableDataSource(this.alumnos)
   }
 
- 
-
-    // search
+    // Buscar
     applyFilter(event: Event) {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
     }
     
-    //eliminar
+    // eliminar
     eliminar(alumno: Alumno) {
       const index = this.alumnos.indexOf(alumno);
       this.alumnos.splice(index, 1);
@@ -77,7 +76,5 @@ export class AlumnosComponent {
       
     }
 
-
-  
 
 }

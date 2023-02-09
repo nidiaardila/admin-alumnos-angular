@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Alumno } from 'src/app/interfaces/alumno';
 import { AlumnoService } from 'src/app/services/alumno.service';
 
@@ -10,6 +10,8 @@ import { AlumnoService } from 'src/app/services/alumno.service';
   styleUrls: ['./abm.component.scss']
 })
 export class AbmComponent  {
+
+  
 
   form: FormGroup;
 // nuevoAlumno: any;
@@ -23,6 +25,7 @@ export class AbmComponent  {
       apellido: ['', Validators.required],
       estatus: ['Activo', Validators.required]
     })
+
   }
   
   // agregar nuevo alumno
@@ -36,14 +39,26 @@ export class AbmComponent  {
       estatus: this.form.value.estatus
     }
 
-    // console.log(user);
+    // console.log(nuevoAlumno);
 
     this._alumnoService.agregarAlumno(nuevoAlumno);
-
     this.router.navigate(['/dashboard'])
-  
   
   }
 
+       //editar alumno
+  // editarAlumno(){
+  //   const editarAlumno: Alumno = {
+  //     cod: this.form.value.cod,
+  //     nombre: this.form.value.nombre,
+  //     apellido: this.form.value.apellido,
+  //     estatus: this.form.value.estatus
+  //   }
+
+  //   this._alumnoService.editarAlumno(editarAlumno);
+  //   this.router.navigate(['/dashboard'])
+  //   console.log(editarAlumno)
+  // }  
+  
 
 }

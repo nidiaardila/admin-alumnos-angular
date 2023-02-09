@@ -41,4 +41,12 @@ export class AlumnoService {
     console.log(this.alumnos);
   }
 
+  // editEmpleado(alumno: Alumno, idAlumno: number){
+  //   this.alumnos[idAlumno].cod = alumno.cod;
+  //   this.alumnos[idAlumno].nombre = alumno.nombre;
+  //   this.alumnos[idAlumno].apellido = alumno.apellido;
+  //   this.alumnos[idAlumno].estatus = alumno.estatus;
+  // }
+
+
 }
