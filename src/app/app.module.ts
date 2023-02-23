@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material.module';
 
+
 // import { TamanoFuenteDirective } from './directives/tamano-fuente.directive';
 // import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
 
@@ -17,6 +18,7 @@ import { MaterialModule } from './material.module';
 @NgModule({
   declarations: [
     AppComponent
+    
     
     // TamanoFuenteDirective
     // NombreCompletoPipe

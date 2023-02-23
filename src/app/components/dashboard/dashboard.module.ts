@@ -13,6 +13,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { NombreCompletoPipe } from 'src/app/pipes/nombre-completo.pipe';
 import { TamanoFuenteDirective } from 'src/app/directives/tamano-fuente.directive';
 import { EditComponent } from './edit/edit.component'
+import { CursosComponent } from './cursos/cursos.component';
 
 
 
@@ -26,7 +27,8 @@ import { EditComponent } from './edit/edit.component'
     ToolbarComponent,
     NombreCompletoPipe,
     TamanoFuenteDirective,
-    EditComponent
+    EditComponent,
+    CursosComponent
     
 
     
