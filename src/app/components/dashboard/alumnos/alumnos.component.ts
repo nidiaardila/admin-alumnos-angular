@@ -1,6 +1,8 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Alumno, Estatus } from 'src/app/interfaces/alumno';
 import { AlumnoService } from 'src/app/services/alumno.service';
 
@@ -12,7 +14,7 @@ import { AlumnoService } from 'src/app/services/alumno.service';
   templateUrl: './alumnos.component.html',
   styleUrls: ['./alumnos.component.scss']
 })
-export class AlumnosComponent {
+export class AlumnosComponent implements OnInit {
 
   // alumnos: Alumno[] = [
   //   {cod: 1, nombre: 'Maria', apellido: 'Luna', estatus: Estatus.Activo},
@@ -38,6 +40,7 @@ export class AlumnosComponent {
   // ]
 
   alumnos: Alumno[] = [];
+  
   displayedColumns: string[] = ['cod', 'nombreCompleto','estatus', 'acciones'];
   // displayedColumns: string[] = ['cod', 'nombre', 'apellido', 'estatus', 'acciones'];
   // dataSource = new MatTableDataSource(this.alumnos);
@@ -49,7 +52,7 @@ export class AlumnosComponent {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor(private _alumnoService: AlumnoService){
+  constructor(private _alumnoService: AlumnoService, private router: Router){
   }
 
    ngOnInit(): void {
@@ -60,6 +63,8 @@ export class AlumnosComponent {
     this.alumnos = this._alumnoService.getAlumno();
     this.dataSource = new MatTableDataSource(this.alumnos)
   }
+
+ 
 
     // Buscar
     applyFilter(event: Event) {
@@ -75,9 +80,34 @@ export class AlumnosComponent {
       
     }
 
+    redirigirEditAlumno(alumno: Alumno){
+      this.router.navigate(['/dashboard/edit', alumno]);
+    }
+
+    // eliminar(alumno: Alumno){
+    //   this._alumnoService.eliminar(alumno);
+    // }
+
+    // eliminar(alumno: Alumno){
+    //   this._alumnoService.eliminar(alumno);
+    // }
+
    
+
+    // eliminar(cod: number) {
+    //  this._alumnoService.eliminar(cod).subscribe(() => 
+    //  this.cargarAlumnos();
+    //  )
+
+    // redirigirEditAlumno(alumno: Alumno){
+    //   this.router.navigate(['components/abm', alumno]);
+
+    // }
+
+
+  }
   
    
 
 
-}
+

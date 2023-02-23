@@ -1,10 +1,10 @@
 <div class="container">
     <app-toolbar></app-toolbar>
     <mat-toolbar >
-        <h1 class="title" > Nuevo Alumno </h1>
+        <h1 class="title" > Editar Alumno </h1>
     </mat-toolbar>
-
-    <form [formGroup]="form" (ngSubmit)="agregarAlumno()" class="form mt-4">
+    
+    <form [formGroup]="form" (ngSubmit)="edit()" class="form mt-4">
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Codigo</mat-label>
@@ -31,7 +31,7 @@
         </div>
 
         <div id="btn-alumno">
-            <button type="submit" mat-fab extended color="primary" class="agregar mt-4" [disabled]="form.invalid" >
+            <button type="submit" mat-fab extended color="primary" class="agregar mt-4" >
                 <mat-icon>done</mat-icon>
                 Aceptar
               </button>
@@ -43,7 +43,6 @@
         
     </form>
 
-   
-    
-
 </div>
+
+

@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Alumno, Estatus } from '../interfaces/alumno';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlumnoService {
 
-  alumnos: Alumno[] = [
+  private alumnos: Alumno[] = [
     {cod: 1, nombre: 'Maria', apellido: 'Luna', estatus: Estatus.Activo},
     {cod: 2, nombre: 'Antonio', apellido: 'Cordoba', estatus:  Estatus.Graduado},
     {cod: 3, nombre: 'Andres', apellido: 'Pinzon', estatus:  Estatus.Inactivo},
@@ -27,9 +29,13 @@ export class AlumnoService {
     {cod: 18, nombre: 'Isabella', apellido: 'Lopez', estatus: Estatus.Activo},
     {cod: 19, nombre: 'Diego', apellido: 'Rivera', estatus: Estatus.Inactivo},
     {cod: 20, nombre: 'Sofia', apellido: 'Perez', estatus: Estatus.Graduado}
-  ]
+  ];
 
-  constructor() { }
+  private alumnos$: BehaviorSubject<Alumno[]>
+
+  constructor() {
+    this.alumnos$ = new BehaviorSubject<Alumno[]>(this.alumnos);
+   }
 
   getAlumno(){
     return this.alumnos.slice();
@@ -41,12 +47,25 @@ export class AlumnoService {
     console.log(this.alumnos);
   }
 
-  // editAlumno(alumno: Alumno, idAlumno: number){
-  //   this.alumnos[idAlumno].cod = alumno.cod;
-  //   this.alumnos[idAlumno].nombre = alumno.nombre;
-  //   this.alumnos[idAlumno].apellido = alumno.apellido;
-  //   this.alumnos[idAlumno].estatus = alumno.estatus;
+  // eliminar(alumno: Alumno): void{
+  //   let indice = this.alumnos.findIndex((a: Alumno) => a.cod === alumno.cod);
+
+  //   if(indice > -1){
+  //     this.alumnos.splice(indice, 1);
+  //     this.alumnos$.next(this.alumnos);
+  //   }
   // }
+
+
+  edit(alumno: Alumno): void{
+    let indice = this.alumnos.findIndex((a: Alumno) => a.cod === a.cod);
+
+    if(indice > -1){
+      this.alumnos[indice] = alumno;
+      this.alumnos$.next(this.alumnos);
+    }
+  }
+
 
 
 }

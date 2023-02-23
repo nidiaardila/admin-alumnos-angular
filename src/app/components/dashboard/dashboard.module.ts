@@ -12,6 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { NombreCompletoPipe } from 'src/app/pipes/nombre-completo.pipe';
 import { TamanoFuenteDirective } from 'src/app/directives/tamano-fuente.directive';
+import { EditComponent } from './edit/edit.component'
+
 
 
 
@@ -23,7 +25,8 @@ import { TamanoFuenteDirective } from 'src/app/directives/tamano-fuente.directiv
     NavbarComponent,
     ToolbarComponent,
     NombreCompletoPipe,
-    TamanoFuenteDirective
+    TamanoFuenteDirective,
+    EditComponent
     
 
     
