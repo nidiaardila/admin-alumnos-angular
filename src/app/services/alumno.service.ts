@@ -40,16 +40,18 @@ export class AlumnoService {
     this.alumnos$ = new BehaviorSubject<Alumno[]>(this.alumnos);
    }
 
-  
+   
+  //get api
+  //  obtenerAlumnos(): Observable<Alumno[]>{
+  //   return this.http.get<Alumno[]>(`${env.URL}/alumnos`)
+  // }
+   
 
   // cargarAlumnos(): Observable<Alumno[]> {
   //  return this.alumnos$.asObservable();
    
   // }
-  // cargarAlumnos(): Observable<Alumno[]> {
-    
-  //  }
-
+  
 
 
   getAlumno(){
@@ -73,13 +75,7 @@ export class AlumnoService {
       this.alumnos$.next(this.alumnos);
     }
   }
-  // edit(){
-
-  // }
-
-  // delete(){
-
-  // }
+  
 }
 
   // mockapi
