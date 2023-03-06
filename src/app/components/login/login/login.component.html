@@ -1,0 +1,18 @@
+<div class="body">
+    <div class="login">
+        <form [formGroup]="form" (ngSubmit)="accept()" >
+            <img src="./assets/img/usuario.png" alt="">
+             <h1>Login</h1>
+                 <mat-form-field class="width" appearance="fill">
+                    <mat-label>User</mat-label>
+                     <input matInput autocomplete="off" formControlName="user">
+                </mat-form-field>
+                <mat-form-field class="width" appearance="fill">
+                     <mat-label>Password</mat-label>
+                    <input matInput autocomplete="off" formControlName="password" type="password">
+                </mat-form-field>
+             <button  type="submit" mat-raised-button color="primary" class="width height" [disabled]="form.invalid">Accept</button>
+        </form>
+        
+    </div>
+</div>

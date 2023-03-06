@@ -17,6 +17,19 @@ const routes: Routes = [
   
 ];
 
+// const routes: Routes = [
+//   { path: '', component: DashboardComponent, children: [
+//     {path: '',component: DashboardComponent},
+//       {path: 'abm',component: AbmComponent},
+//       {path: 'edit',component: EditComponent},
+//       {path: 'dashboard',component: DashboardComponent},
+//       {path: 'alumnos',component: AlumnosComponent},
+//       {path: 'cursos',component: CursosComponent},
+//   ]  
+// },
+  
+// ];
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

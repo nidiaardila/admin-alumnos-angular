@@ -11,6 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatOptionModule } from '@angular/material/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -32,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     MatMenuModule,
     MatOptionModule,
+    MatSnackBarModule,
 
     HttpClientModule
   
@@ -50,6 +53,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatListModule,
     MatOptionModule,
+    MatSnackBarModule,
 
     HttpClientModule
 

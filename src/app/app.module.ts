@@ -6,38 +6,33 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material.module';
-
+import { LoginComponent } from './components/login/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // import { TamanoFuenteDirective } from './directives/tamano-fuente.directive';
 // import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
 
 // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
-    AppComponent
-    
-    
+    AppComponent,
+
     // TamanoFuenteDirective
     // NombreCompletoPipe
-   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
     // FormsModule,
     // ReactiveFormsModule
-    
   ],
-  exports:[
-
-  ],
+  exports: [],
 
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

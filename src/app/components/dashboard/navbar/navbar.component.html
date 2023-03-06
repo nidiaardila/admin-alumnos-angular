@@ -1,12 +1,11 @@
 <div class="mt-3">
-    <button mat-icon-button [matMenuTriggerFor]="menu" style="color:rgb(80, 61, 219)">
-      <mat-icon>menu</mat-icon>
+    <button mat-icon-button [matMenuTriggerFor]="menu" style="color:rgb(80, 61, 219)"><h1>Menu</h1>
+      <mat-icon>menu</mat-icon> 
     </button>
     
     <mat-menu #menu="matMenu">
       <button mat-menu-item routerLink="/dashboard">Alumnos</button>
       <button mat-menu-item routerLink="/dashboard/cursos">Cursos</button>
-      <button mat-menu-item >Salir<mat-icon class="acciones" style="color:rgb(96, 123, 85)">logout</mat-icon></button>
+      <button mat-menu-item (click)="logout()">Salir<mat-icon class="acciones" style="color:rgb(96, 123, 85)">logout</mat-icon></button>
     </mat-menu>
-    </div>
-    
+  </div>

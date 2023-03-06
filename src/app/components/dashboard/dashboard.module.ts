@@ -12,10 +12,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { NombreCompletoPipe } from 'src/app/pipes/nombre-completo.pipe';
 import { TamanoFuenteDirective } from 'src/app/directives/tamano-fuente.directive';
-import { EditComponent } from './edit/edit.component'
+import { EditComponent } from './edit/edit.component';
 import { CursosComponent } from './cursos/cursos.component';
-
-
+import { LoginComponent } from 'src/app/components/login/login/login.component';
 
 
 @NgModule({
@@ -28,10 +27,8 @@ import { CursosComponent } from './cursos/cursos.component';
     NombreCompletoPipe,
     TamanoFuenteDirective,
     EditComponent,
-    CursosComponent
-    
-
-    
+    CursosComponent,
+    LoginComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +36,6 @@ import { CursosComponent } from './cursos/cursos.component';
     MaterialModule,
     ReactiveFormsModule
     
-  ]
+  ],
 })
-export class DashboardModule { }
+export class DashboardModule {}

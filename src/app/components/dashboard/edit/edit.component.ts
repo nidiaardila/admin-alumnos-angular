@@ -28,6 +28,7 @@ export class EditComponent implements OnInit {
 
   edit(){
     let alumno: Alumno = {
+      // id:1,
       cod: this.form.value.cod,
       nombre: this.form.value.nombre,
       apellido: this.form.value.apellido,
