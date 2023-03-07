@@ -1,3 +1,4 @@
+import { HttpParams } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,6 +13,7 @@ import { AlumnoService } from 'src/app/services/alumno.service';
 export class EditComponent implements OnInit {
 
   form!: FormGroup;
+   id2!: string;
 
   constructor(private fb: FormBuilder, private activatedRoute: ActivatedRoute, private router:Router, private _alumnoService: AlumnoService){}
   ngOnInit(): void {
@@ -26,16 +28,23 @@ export class EditComponent implements OnInit {
     })
   }
 
-  edit(){
+  updateAlumno(){ 
+         
+    this.activatedRoute
+      .paramMap
+      .subscribe(params => {        
+        this.id2 = String(params.get('id'));
+       console.log(params.get('id'));
+      });   
     let alumno: Alumno = {
-      id: '1',
+      id: this.id2,
       cod: this.form.value.cod,
       nombre: this.form.value.nombre,
       apellido: this.form.value.apellido,
       estatus: this.form.value.estatus
     }
 
-    this._alumnoService.edit(alumno);
+    this._alumnoService.updateAlumno(alumno);
     this.router.navigate(['dashboard']);
   }
 

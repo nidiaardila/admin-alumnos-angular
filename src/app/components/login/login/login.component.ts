@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     const user = this.form.value.user;
     const password = this.form.value.password;
 
-    if(user == 'Nidia' && password== '12345'){
+    if(user == 'Nidia' && password== '123'){
       this.router.navigate(['dashboard']);
       console.log('Bienvenid@')
 

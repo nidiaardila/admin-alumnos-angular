@@ -52,10 +52,17 @@ export class AlumnosComponent implements OnInit {
   }
 
   // eliminar
-  eliminar(alumno: Alumno) {
-    const index = this.alumnos.indexOf(alumno);
-    this.alumnos.splice(index, 1);
-    this.dataSource = new MatTableDataSource<Alumno>(this.alumnos); //actualizar la data en la tabla después de eliminar un alumno
+  // eliminar(alumno: Alumno) {
+  //   const index = this.alumnos.indexOf(alumno);
+  //   this.alumnos.splice(index, 1);
+  //   this.dataSource = new MatTableDataSource<Alumno>(this.alumnos); //actualizar la data en la tabla después de eliminar un alumno
+  // }
+  deleteAlumno(alumno: Alumno) {
+    this._alumnoService.deleteAlumno(alumno).subscribe((alumno:Alumno)=>{
+      alert(`El alumno ${alumno.nombre} ${alumno.apellido} ha sido eliminado`);
+      this.alumnos$ = this._alumnoService.obtenerAlumnos();
+    });
+    
   }
 
   redirigirEditAlumno(alumno: Alumno) {

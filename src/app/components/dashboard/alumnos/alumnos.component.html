@@ -47,7 +47,7 @@
       <th mat-header-cell *matHeaderCellDef appTamanoFuente> Acciones </th>
       <td mat-cell *matCellDef="let alumno;  let i = index"> 
         <a (click)="redirigirEditAlumno(alumno)" ><mat-icon class="acciones" style="color:rgb(96, 123, 85)">edit</mat-icon></a> 
-        <a (click)="eliminar(alumno)"><mat-icon class="acciones" style="color:rgb(200, 47, 47)">delete</mat-icon></a>  
+        <a (click)="deleteAlumno(alumno)"><mat-icon class="acciones" style="color:rgb(200, 47, 47)">delete</mat-icon></a>  
       </td>
     </ng-container>
   

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, Observable, Subscriber, throwError  } from 'rxjs';
 import { Alumno } from '../interfaces/alumno';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import {env} from 'src/environment/environment'
 
 @Injectable({
@@ -47,6 +47,48 @@ export class AlumnoService {
     const result = this.http.get<Alumno[]>(`${env.URL}/alumnos`);
     return result;
   }
+
+  deleteAlumno(alumno: Alumno): Observable<Alumno>{
+    return this.http.delete<Alumno>(`${env.URL}/alumnos/${alumno.id}`, {
+      headers: new HttpHeaders({
+        'Alumno': 'Activo'
+      })
+    }).pipe(
+      catchError(this.capturarError)
+    );
+  }
+
+  updateAlumno(alumno: Alumno): Observable<Alumno>{
+    console.log(alumno.id);
+    return this.http.put<Alumno>(`${env.URL}/alumnos/${alumno.id}`, alumno, {
+      headers: new HttpHeaders({
+        'usuario': 'Nidia'
+      })
+    }).pipe(
+      catchError(this.capturarError)
+    );
+    
+  }
+
+  addAlumno(alumno: Alumno): Observable<Alumno>{
+    return this.http.post<Alumno>(`${env.URL}/alumnos`, alumno, {
+      headers: new HttpHeaders({
+        'encoding': 'UTF-8'
+      })
+    }).pipe(
+      catchError(this.capturarError)
+    );
+  }
+
+  private capturarError(error: HttpErrorResponse){
+    if(error.error instanceof ErrorEvent){
+      alert(`Hubo un error del lado del cliente: ${error.message}`);
+    }else{
+      alert(`Hubo un error del lado del servidor: ${error.message}`);
+    }
+
+    return throwError(() => new Error('Error en el procesamiento de alumnos'));
+  }
    
 
 
@@ -55,14 +97,8 @@ export class AlumnoService {
   }
 
   //actualizar la tabla con el nuevo alumno
-  agregarAlumno(nuevoAlumno: Alumno){
-    
-  }
   
-
-  edit(alumno: Alumno): void{
-   
-  }
+  
   
 }
 
