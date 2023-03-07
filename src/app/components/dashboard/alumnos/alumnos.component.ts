@@ -37,7 +37,7 @@ export class AlumnosComponent implements OnInit {
     // this._alumnoService.cargarAlumnos();
     // this.cargarAlumnos();
     // this.alumnos$ = this._alumnoService.cargarAlumnos();
-    this.alumnos$ = this._alumnoService.obtenerAlumnos();
+    this.alumnos$ = this._alumnoService.getAlumnos();
   }
 
   // cargarAlumnos() {
@@ -60,7 +60,7 @@ export class AlumnosComponent implements OnInit {
   deleteAlumno(alumno: Alumno) {
     this._alumnoService.deleteAlumno(alumno).subscribe((alumno:Alumno)=>{
       alert(`El alumno ${alumno.nombre} ${alumno.apellido} ha sido eliminado`);
-      this.alumnos$ = this._alumnoService.obtenerAlumnos();
+      this.alumnos$ = this._alumnoService.getAlumnos();
     });
     
   }

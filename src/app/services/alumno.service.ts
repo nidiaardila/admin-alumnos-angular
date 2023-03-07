@@ -42,7 +42,7 @@ export class AlumnoService {
 
 
   //get api
-  obtenerAlumnos(): Observable<Alumno[]>{
+  getAlumnos(): Observable<Alumno[]>{
     console.log(`${env.URL}/alumnos`);
     const result = this.http.get<Alumno[]>(`${env.URL}/alumnos`);
     return result;
@@ -80,6 +80,7 @@ export class AlumnoService {
     );
   }
 
+ 
   private capturarError(error: HttpErrorResponse){
     if(error.error instanceof ErrorEvent){
       alert(`Hubo un error del lado del cliente: ${error.message}`);
@@ -90,15 +91,6 @@ export class AlumnoService {
     return throwError(() => new Error('Error en el procesamiento de alumnos'));
   }
    
-
-
-  getAlumno(){
-   
-  }
-
-  //actualizar la tabla con el nuevo alumno
-  
-  
   
 }
 
