@@ -7,8 +7,8 @@
 
 
 <!-- tabla de alumnos -->
-<div *ngIf="alumnos.length > 0">
-
+<!-- <div *ngIf="alumnos$.length > 0"> -->
+<div>
 <mat-form-field class="mt-3">
   <mat-label>Buscar</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="..." #input autocomplete="off">
@@ -16,7 +16,7 @@
 
 <div class="mat-elevation-z8">
 
-  <table mat-table [dataSource]="dataSource" >
+  <table mat-table [dataSource]="alumnos$" >
   
     <ng-container matColumnDef="cod">
       <th mat-header-cell *matHeaderCellDef appTamanoFuente> Cod. </th>
@@ -64,10 +64,11 @@
 </div>
 
 <!-- mostrar si la lista de alumnos esta vacia -->
-<div *ngIf="alumnos.length == 0" class="mt-5">
+<!-- <div *ngIf="alumnos.length == 0" class="mt-5"> -->
+  <!-- <div  class="mt-5">
 <mat-icon>sentiment_dissatisfied</mat-icon>
 <h1 style="color: red;"> No hay alumnos registrados... </h1> 
-</div>
+</div> -->
 
 
 

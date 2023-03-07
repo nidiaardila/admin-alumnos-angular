@@ -32,7 +32,7 @@ export class AbmComponent  {
     console.log(this.form);
 
     const nuevoAlumno: Alumno ={
-      // id: 1,
+      id: '1',
       cod: this.form.value.cod,
       nombre: this.form.value.nombre,
       apellido: this.form.value.apellido,

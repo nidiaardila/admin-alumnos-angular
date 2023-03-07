@@ -6,73 +6,59 @@ import { Observable } from 'rxjs';
 import { Alumno } from 'src/app/interfaces/alumno';
 import { AlumnoService } from 'src/app/services/alumno.service';
 
-
 // import { AbmComponent } from '../abm/abm.component';
 
 @Component({
   selector: 'app-alumnos',
   templateUrl: './alumnos.component.html',
-  styleUrls: ['./alumnos.component.scss']
+  styleUrls: ['./alumnos.component.scss'],
 })
 export class AlumnosComponent implements OnInit {
-
   alumnos!: Alumno[];
   alumnos$!: Observable<Alumno[]>;
 
   // alumnos: Alumno[] = [];
-  
-  displayedColumns: string[] = ['cod', 'nombreCompleto','estatus', 'acciones'];
+
+  displayedColumns: string[] = ['cod', 'nombreCompleto', 'estatus', 'acciones'];
   // displayedColumns: string[] = ['cod', 'nombre', 'apellido', 'estatus', 'acciones'];
   // dataSource = new MatTableDataSource(this.alumnos);
-  dataSource!: MatTableDataSource<any>;
+  dataSource!: MatTableDataSource<Alumno>;
 
   // paginator
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
+  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+  // ngAfterViewInit() {
+  //   this.dataSource.paginator = this.paginator;
+  // }
 
-  constructor(
-    private _alumnoService: AlumnoService, 
-    private router: Router){
-  }
+  constructor(private _alumnoService: AlumnoService, private router: Router) {}
 
-   ngOnInit(): void {
+  ngOnInit(): void {
+    // this._alumnoService.obtenerAlumnos();
     // this._alumnoService.cargarAlumnos();
-    this.cargarAlumnos();
+    // this.cargarAlumnos();
     // this.alumnos$ = this._alumnoService.cargarAlumnos();
+    this.alumnos$ = this._alumnoService.obtenerAlumnos();
   }
 
-  cargarAlumnos() {
-    this.alumnos = this._alumnoService.getAlumno();
-    this.dataSource = new MatTableDataSource(this.alumnos)
+  // cargarAlumnos() {
+  //   this.alumnos = this._alumnoService.getAlumno();
+  //   this.dataSource = new MatTableDataSource(this.alumnos);
+  // }
+
+  // Buscar
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
- 
-
-    // Buscar
-    applyFilter(event: Event) {
-      const filterValue = (event.target as HTMLInputElement).value;
-      this.dataSource.filter = filterValue.trim().toLowerCase();
-    }
-    
-    // eliminar
-    eliminar(alumno: Alumno) {
-      const index = this.alumnos.indexOf(alumno);
-      this.alumnos.splice(index, 1);
-      this.dataSource = new MatTableDataSource<Alumno>(this.alumnos); //actualizar la data en la tabla después de eliminar un alumno
-      
-    }
-
-    redirigirEditAlumno(alumno: Alumno){
-      this.router.navigate(['/dashboard/edit', alumno]);
-    }
-
-
-
+  // eliminar
+  eliminar(alumno: Alumno) {
+    const index = this.alumnos.indexOf(alumno);
+    this.alumnos.splice(index, 1);
+    this.dataSource = new MatTableDataSource<Alumno>(this.alumnos); //actualizar la data en la tabla después de eliminar un alumno
   }
-  
-   
 
-
-
+  redirigirEditAlumno(alumno: Alumno) {
+    this.router.navigate(['/dashboard/edit', alumno]);
+  }
+}
