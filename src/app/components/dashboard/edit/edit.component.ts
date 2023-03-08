@@ -15,7 +15,13 @@ export class EditComponent implements OnInit {
   form!: FormGroup;
    id2!: string;
 
-  constructor(private fb: FormBuilder, private activatedRoute: ActivatedRoute, private router:Router, private _alumnoService: AlumnoService){}
+  constructor(
+    private fb: FormBuilder, 
+    private activatedRoute: ActivatedRoute,
+     private router:Router, 
+     private _alumnoService: AlumnoService
+     
+     ){}
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((parametros) => {
       console.log(parametros);
@@ -47,9 +53,14 @@ export class EditComponent implements OnInit {
     // this._alumnoService.updateAlumno(alumno);
     this._alumnoService.updateAlumno(alumno).subscribe((alumno: Alumno)=>{
       console.log(alumno);
-      this._alumnoService.getAlumnos();
+      
+      alert(`El alumno se modifico con exito`);
+      
     });
+    this._alumnoService.getAlumnos();
     this.router.navigate(['dashboard']);
+   
+    
     
   }
 

@@ -83,9 +83,9 @@ export class AlumnoService {
  
   private capturarError(error: HttpErrorResponse){
     if(error.error instanceof ErrorEvent){
-      alert(`Hubo un error del lado del cliente: ${error.message}`);
+      alert(`Error del lado del cliente: ${error.message}`);
     }else{
-      alert(`Hubo un error del lado del servidor: ${error.message}`);
+      alert(`Error del lado del servidor: ${error.message}`);
     }
 
     return throwError(() => new Error('Error en el procesamiento de alumnos'));
