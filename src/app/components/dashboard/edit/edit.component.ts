@@ -2,6 +2,7 @@ import { HttpParams } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Alumno } from 'src/app/interfaces/alumno';
 import { AlumnoService } from 'src/app/services/alumno.service';
 
@@ -14,6 +15,7 @@ export class EditComponent implements OnInit {
 
   form!: FormGroup;
    id2!: string;
+  
 
   constructor(
     private fb: FormBuilder, 
@@ -53,13 +55,12 @@ export class EditComponent implements OnInit {
     // this._alumnoService.updateAlumno(alumno);
     this._alumnoService.updateAlumno(alumno).subscribe((alumno: Alumno)=>{
       console.log(alumno);
-      
+      this.router.navigate(['dashboard']);
+      this._alumnoService.getAlumnos();
       alert(`El alumno se modifico con exito`);
-      
+    
     });
-    this._alumnoService.getAlumnos();
-    this.router.navigate(['dashboard']);
-   
+    
     
     
   }
