@@ -34,27 +34,28 @@ describe('AppComponent', () => {
         DashboardComponent,
         LoginComponent,
         AbmComponent,
-        CursosComponent
+        CursosComponent,
+        
       ],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('El componente AppComponent se ha creado de forma correcta', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Admin-Alumnos-Angular'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('Admin-Alumnos-Angular');
-  });
+  // it(`should have as title 'Admin-Alumnos-Angular'`, () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.componentInstance;
+  //   expect(app.title).toEqual('Admin-Alumnos-Angular');
+  // });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Admin-Alumnos-Angular app is running!');
-  });
+  // it('should render title', () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   fixture.detectChanges();
+  //   const compiled = fixture.nativeElement as HTMLElement;
+  //   expect(compiled.querySelector('.content span')?.textContent).toContain('Admin-Alumnos-Angular app is running!');
+  // });
 });

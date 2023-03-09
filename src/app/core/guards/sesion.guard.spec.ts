@@ -10,7 +10,7 @@ describe('SesionGuard', () => {
     guard = TestBed.inject(SesionGuard);
   });
 
-  it('should be created', () => {
+  it('El componente SesionGuard se ha creado de forma correcta', () => {
     expect(guard).toBeTruthy();
   });
 });

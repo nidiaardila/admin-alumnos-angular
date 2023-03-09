@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from 'src/app/material.module';
 
 import { NavbarComponent } from './navbar.component';
 
@@ -8,7 +11,13 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
+      declarations: [ NavbarComponent ],
+      imports: [
+        ReactiveFormsModule,
+        MaterialModule,
+        BrowserAnimationsModule,
+        
+      ]
     })
     .compileComponents();
 
@@ -17,7 +26,7 @@ describe('NavbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('El componente  NavbarComponent se crea de forma correcta', () => {
     expect(component).toBeTruthy();
   });
 });
