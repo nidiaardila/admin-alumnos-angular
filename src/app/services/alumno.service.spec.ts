@@ -18,11 +18,11 @@ describe('AlumnoService', () => {
     service = new AlumnoService(httpClientSpy as any);
   });
 
-  it('should be created', () => {
+  it('El componente AlumnoService se ha creado correctamented', () => {
     expect(service).toBeTruthy();
   });
 
-  it("El servicio retorna un arreglo de datos mockeados", (done: DoneFn)=>{
+  it("El servicio retorna un arreglo de Alumnos de datos mockeados", (done: DoneFn)=>{
     let fechaPrueba = new Date()
     const mockDatos: Alumno[] = [
         {

@@ -46,4 +46,32 @@ describe('LoginComponent', () => {
     password.setValue('123');
     expect(password.valid).toBeTrue();
   });
+
+  it('Retornara formulario valido', ()=>{
+    const fixture = TestBed.createComponent(LoginComponent);
+    const app = fixture.componentInstance
+    fixture.detectChanges();
+
+    let user = app.form.controls['user']
+    let password = app.form.controls ['password']
+
+    user.setValue('Nidia')
+    password.setValue(123)
+
+    expect(app.form.invalid).toBeFalse();
+  })
+
+  it('Retornara formulario VALID', ()=>{
+    const fixture = TestBed.createComponent(LoginComponent);
+    const app = fixture.componentInstance
+    fixture.detectChanges();
+
+    let user = app.form.controls['user']
+    let password = app.form.controls ['password']
+
+    user.setValue('Nidia')
+    password.setValue(123)
+
+    expect(app.form.valid).toBeTrue();
+  })
 });
