@@ -21,12 +21,16 @@ export class SesionGuard implements CanActivate, CanActivateChild, CanLoad {
         if(sesion.sesionActiva){
           return true;
         }else{
-          this.router.navigate(['/login']);
+          this.router.navigate(['login']);
           return false;
         }
       })
     );
   }
+
+
+
+
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -35,7 +39,7 @@ export class SesionGuard implements CanActivate, CanActivateChild, CanLoad {
           if(sesion.sesionActiva){
             return true;
           }else{
-            this.router.navigate(['/login']);
+            this.router.navigate(['login']);  
             return false;
           }
         })
@@ -49,7 +53,7 @@ export class SesionGuard implements CanActivate, CanActivateChild, CanLoad {
           if(sesion.sesionActiva){
             return true;
           }else{
-            this.router.navigate(['/login']);
+            this.router.navigate(['login']);
             return false;
           }
         })

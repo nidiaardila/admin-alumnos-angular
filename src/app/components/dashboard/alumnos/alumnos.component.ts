@@ -4,7 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Alumno } from 'src/app/interfaces/alumno';
+import { Sesion } from 'src/app/interfaces/sesion';
 import { AlumnoService } from 'src/app/services/alumno.service';
+import { SesionService } from 'src/app/services/sesion.service';
 
 // import { AbmComponent } from '../abm/abm.component';
 
@@ -30,7 +32,7 @@ export class AlumnosComponent implements OnInit {
   //   this.dataSource.paginator = this.paginator;
   // }
 
-  constructor(private _alumnoService: AlumnoService, private router: Router) {}
+  constructor(private _alumnoService: AlumnoService, private router: Router, private sesion: SesionService) {}
 
   ngOnInit(): void {
     // this._alumnoService.obtenerAlumnos();
@@ -38,6 +40,11 @@ export class AlumnosComponent implements OnInit {
     // this.cargarAlumnos();
     // this.alumnos$ = this._alumnoService.cargarAlumnos();
     this.alumnos$ = this._alumnoService.getAlumnos();
+    // this.sesion.obtenerSesion().subscribe((sesion: Sesion)=>{
+    //   console.log('Estado de la session', sesion);
+
+    // })
+    
   }
 
   // cargarAlumnos() {

@@ -14,7 +14,8 @@ import { NombreCompletoPipe } from 'src/app/pipes/nombre-completo.pipe';
 import { TamanoFuenteDirective } from 'src/app/directives/tamano-fuente.directive';
 import { EditComponent } from './edit/edit.component';
 import { CursosComponent } from './cursos/cursos.component';
-import { LoginComponent } from 'src/app/components/login/login/login.component';
+import { LoginComponent } from '../login/login.component';
+
 
 
 @NgModule({
@@ -29,13 +30,13 @@ import { LoginComponent } from 'src/app/components/login/login/login.component';
     EditComponent,
     CursosComponent,
     LoginComponent,
+  
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
   ],
 })
 export class DashboardModule {}

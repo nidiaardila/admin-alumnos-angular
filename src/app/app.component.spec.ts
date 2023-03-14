@@ -11,7 +11,7 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
 import { EditComponent } from './components/dashboard/edit/edit.component';
 import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 import { ToolbarComponent } from './components/dashboard/toolbar/toolbar.component';
-import { LoginComponent } from './components/login/login/login.component';
+import { LoginComponent } from './components/authentication/components/login/login/login.component';
 import { MaterialModule } from './material.module';
 
 describe('AppComponent', () => {
@@ -23,7 +23,6 @@ describe('AppComponent', () => {
         BrowserAnimationsModule,
         DashboardModule,
         DashboardRoutingModule,
-        
       ],
       declarations: [
         AppComponent,
@@ -35,7 +34,6 @@ describe('AppComponent', () => {
         LoginComponent,
         AbmComponent,
         CursosComponent,
-        
       ],
     }).compileComponents();
   });
