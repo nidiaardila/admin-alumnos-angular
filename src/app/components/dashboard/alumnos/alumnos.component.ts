@@ -18,6 +18,7 @@ import { SesionService } from 'src/app/services/sesion.service';
 export class AlumnosComponent implements OnInit {
   alumnos!: Alumno[];
   alumnos$!: Observable<Alumno[]>;
+  sesion$!: Observable<Sesion>
 
   // alumnos: Alumno[] = [];
 
@@ -42,6 +43,7 @@ export class AlumnosComponent implements OnInit {
     this.alumnos$ = this._alumnoService.getAlumnos();
     // this.sesion.obtenerSesion().subscribe((sesion: Sesion)=>{
     //   console.log('Estado de la session', sesion);
+    this.sesion$ = this.sesion.obtenerSesion();
 
     // })
     

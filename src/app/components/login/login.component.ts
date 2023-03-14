@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/interfaces/usuario';
+import { LoginService } from 'src/app/services/login.service';
 
 
 @Component({
@@ -12,7 +14,12 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar, private router: Router) {
+  constructor(
+    private login: LoginService, 
+    private fb: FormBuilder,
+    private _snackBar: MatSnackBar,
+    private router: Router
+      ) {
     this.form = this.fb.group({
       user: ['', Validators.required],
       password: ['', Validators.required],
@@ -23,10 +30,14 @@ export class LoginComponent implements OnInit {
 
   accept() {
     // console.log(this.form);
-    const user = this.form.value.user;
-    const password = this.form.value.password;
+     let user: Usuario = {
+      usuario: this.form.value.user,
+      contrasena: this.form.value.password
+    }
+  
 
-    if(user == 'Nidia' && password== '123'){
+    if(user.usuario == 'Nidia' && user.contrasena== '123'){
+      this.login.login(user)
       this.router.navigate(['dashboard']);
       console.log('Bienvenid@')
 
