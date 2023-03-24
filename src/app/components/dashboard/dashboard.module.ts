@@ -16,6 +16,12 @@ import { EditComponent } from './edit/edit.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { LoginComponent } from '../login/login.component';
 
+import { StoreModule } from '@ngrx/store';
+import { alumnoStateFeatureKey, reducer } from 'src/app/state/alumno-state.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { AlumnosEffects } from 'src/app/state/alumno-state.effects';
+import { authFeatureKey, authReducer } from 'src/app/components/state/auth.reducer';
+
 
 
 @NgModule({
@@ -29,7 +35,8 @@ import { LoginComponent } from '../login/login.component';
     TamanoFuenteDirective,
     EditComponent,
     CursosComponent,
-    LoginComponent,
+    LoginComponent
+    
   
   ],
   imports: [
@@ -37,6 +44,11 @@ import { LoginComponent } from '../login/login.component';
     DashboardRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
+    StoreModule.forFeature(alumnoStateFeatureKey, reducer),
+    EffectsModule.forFeature([AlumnosEffects])
+    // StoreModule.forRoot({}, {}),
+    // StoreModule.forFeature(authFeatureKey, authReducer)
+    // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
 })
 export class DashboardModule {}

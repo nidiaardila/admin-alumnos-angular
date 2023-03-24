@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { LoginService } from 'src/app/services/login.service';
+import { AuthState } from '../state/auth.reducer';
 
 
 @Component({
@@ -18,7 +20,8 @@ export class LoginComponent implements OnInit {
     private login: LoginService, 
     private fb: FormBuilder,
     private _snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private authStore: Store<AuthState>
       ) {
     this.form = this.fb.group({
       user: ['', Validators.required],

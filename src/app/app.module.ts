@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { isDevMode, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,20 +10,14 @@ import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 
-
-// import { TamanoFuenteDirective } from './directives/tamano-fuente.directive';
-// import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
-
-// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     
-
-    // TamanoFuenteDirective
-    // NombreCompletoPipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +26,9 @@ import { CoreModule } from './core/core.module';
     MaterialModule,
     HttpClientModule,
     CoreModule,
-    CoreModule,
+    // StoreModule.forRoot({}, {}),
+    // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([])
 
     // FormsModule,
     // ReactiveFormsModule

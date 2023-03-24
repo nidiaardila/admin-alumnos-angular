@@ -8,7 +8,11 @@ import { Sesion } from 'src/app/interfaces/sesion';
 import { AlumnoService } from 'src/app/services/alumno.service';
 import { SesionService } from 'src/app/services/sesion.service';
 
-// import { AbmComponent } from '../abm/abm.component';
+import { cargarAlumnoState, alumnosCargados, eliminarAlumnoState } from 'src/app/state/alumno-state.actions';
+import { AlumnoState } from 'src/app/state/alumno-state.reducer';
+import { selectCargandoAlumnos, selectAlumnosCargados } from 'src/app/state/alumno-state.selectors';
+
+
 
 @Component({
   selector: 'app-alumnos',
@@ -18,7 +22,8 @@ import { SesionService } from 'src/app/services/sesion.service';
 export class AlumnosComponent implements OnInit {
   alumnos!: Alumno[];
   alumnos$!: Observable<Alumno[]>;
-  sesion$!: Observable<Sesion>
+  sesion$!: Observable<Sesion>;
+  cargando$!: Observable<Boolean>
 
   // alumnos: Alumno[] = [];
 
@@ -33,48 +38,41 @@ export class AlumnosComponent implements OnInit {
   //   this.dataSource.paginator = this.paginator;
   // }
 
-  constructor(private _alumnoService: AlumnoService, private router: Router, private sesion: SesionService) {}
+  constructor(
+    private _alumnoService: AlumnoService, 
+    private router: Router, 
+    private sesion: SesionService,
+    private store: Store<AlumnoState>
+    ) {}
 
-  ngOnInit(): void {
-    // this._alumnoService.obtenerAlumnos();
-    // this._alumnoService.cargarAlumnos();
-    // this.cargarAlumnos();
-    // this.alumnos$ = this._alumnoService.cargarAlumnos();
-    this.alumnos$ = this._alumnoService.getAlumnos();
-    // this.sesion.obtenerSesion().subscribe((sesion: Sesion)=>{
-    //   console.log('Estado de la session', sesion);
+  ngOnInit() {
+    this.cargando$ = this.store.select(selectCargandoAlumnos);
+
+    this.alumnos$ = this.store.select(selectAlumnosCargados);
     this.sesion$ = this.sesion.obtenerSesion();
-
-    // })
     
   }
 
-  // cargarAlumnos() {
-  //   this.alumnos = this._alumnoService.getAlumno();
-  //   this.dataSource = new MatTableDataSource(this.alumnos);
-  // }
 
   // Buscar
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+  // applyFilter(event: Event) {
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  // }
 
   // eliminar
-  // eliminar(alumno: Alumno) {
-  //   const index = this.alumnos.indexOf(alumno);
-  //   this.alumnos.splice(index, 1);
-  //   this.dataSource = new MatTableDataSource<Alumno>(this.alumnos); //actualizar la data en la tabla después de eliminar un alumno
-  // }
   deleteAlumno(alumno: Alumno) {
-    this._alumnoService.deleteAlumno(alumno).subscribe((alumno:Alumno)=>{
-      alert(`El alumno ${alumno.nombre} ${alumno.apellido} ha sido eliminado`);
-      this.alumnos$ = this._alumnoService.getAlumnos();
-    });
+    // this._alumnoService.deleteAlumno(alumno).subscribe((alumno:Alumno)=>{
+    //   alert(`El alumno ${alumno.nombre} ${alumno.apellido} ha sido eliminado`);
+    //   this.alumnos$ = this._alumnoService.getAlumnos();
+    // });
+    alert(`El alumno ${alumno.nombre} ${alumno.apellido} ha sido eliminado`);
+    this.store.dispatch(eliminarAlumnoState({ alumno }));
     
   }
 
   redirigirEditAlumno(alumno: Alumno) {
+    
     this.router.navigate(['/dashboard/edit', alumno]);
   }
 }

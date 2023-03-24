@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router, ActivatedRoute } from '@angular/router';
 import { Alumno } from 'src/app/interfaces/alumno';
 import { AlumnoService } from 'src/app/services/alumno.service';
+import { agregarAlumnoState } from 'src/app/state/alumno-state.actions';
+import { AlumnoState } from 'src/app/state/alumno-state.reducer';
 
 @Component({
   selector: 'app-abm',
@@ -17,17 +19,11 @@ export class AbmComponent implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private router:Router, 
-    private _alumnoService: AlumnoService
+    private _alumnoService: AlumnoService,
+    private store: Store<AlumnoState>,
   
     ){
   
-    //formulario para nuevo alumno
-    // this.form = this.fb.group({
-    //   cod: ['', Validators.required],
-    //   nombre: ['', Validators.required],
-    //   apellido: ['', Validators.required],
-    //   estatus: ['Activo', Validators.required]
-    // })
   }
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -37,23 +33,6 @@ export class AbmComponent implements OnInit {
       estatus: ['Activo', Validators.required]
     })
   }
-  
-  // agregar nuevo alumno
-  // agregarAlumno(){
-  //   console.log(this.form);
-
-  //   const nuevoAlumno: Alumno ={
-  //     id: '1',
-  //     cod: this.form.value.cod,
-  //     nombre: this.form.value.nombre,
-  //     apellido: this.form.value.apellido,
-  //     estatus: this.form.value.estatus
-  //   }
-
-  //   this._alumnoService.agregarAlumno(nuevoAlumno);
-  //   this.router.navigate(['/dashboard'])
-  
-  // }
 
   addAlumno(){
     let alumno: Alumno = {
@@ -63,6 +42,7 @@ export class AbmComponent implements OnInit {
       apellido: this.form.value.apellido,
       estatus: this.form.value.estatus
     }
+    this.store.dispatch(agregarAlumnoState({ alumno: alumno }))
     this._alumnoService.addAlumno(alumno).subscribe((alumno: Alumno) => {
      
       this.router.navigate(['/dashboard']);

@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
 import { Alumno } from 'src/app/interfaces/alumno';
 import { AlumnoService } from 'src/app/services/alumno.service';
 
+import { editarAlumnoState } from 'src/app/state/alumno-state.actions';
+import { AlumnoState } from 'src/app/state/alumno-state.reducer';
+
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -21,7 +24,8 @@ export class EditComponent implements OnInit {
     private fb: FormBuilder, 
     private activatedRoute: ActivatedRoute,
      private router:Router, 
-     private _alumnoService: AlumnoService
+     private _alumnoService: AlumnoService,
+     private store: Store<AlumnoState>,
      
      ){}
   ngOnInit(): void {
@@ -55,10 +59,10 @@ export class EditComponent implements OnInit {
     // this._alumnoService.updateAlumno(alumno);
     this._alumnoService.updateAlumno(alumno).subscribe((alumno: Alumno)=>{
       console.log(alumno);
+      this.store.dispatch(editarAlumnoState({alumno: alumno}));
       this.router.navigate(['dashboard']);
       this._alumnoService.getAlumnos();
       alert(`El alumno se modifico con exito`);
-    
     });
     
     
