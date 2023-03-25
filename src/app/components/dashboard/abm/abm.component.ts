@@ -5,6 +5,7 @@ import { Alumno } from 'src/app/interfaces/alumno';
 import { AlumnoService } from 'src/app/services/alumno.service';
 import { agregarAlumnoState } from 'src/app/state/alumno-state.actions';
 import { AlumnoState } from 'src/app/state/alumno-state.reducer';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-abm',

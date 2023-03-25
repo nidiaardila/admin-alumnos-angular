@@ -11,7 +11,7 @@ import { SesionService } from 'src/app/services/sesion.service';
 import { cargarAlumnoState, alumnosCargados, eliminarAlumnoState } from 'src/app/state/alumno-state.actions';
 import { AlumnoState } from 'src/app/state/alumno-state.reducer';
 import { selectCargandoAlumnos, selectAlumnosCargados } from 'src/app/state/alumno-state.selectors';
-
+import { Store } from '@ngrx/store';
 
 
 @Component({

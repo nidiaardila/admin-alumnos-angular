@@ -21,6 +21,7 @@ import { alumnoStateFeatureKey, reducer } from 'src/app/state/alumno-state.reduc
 import { EffectsModule } from '@ngrx/effects';
 import { AlumnosEffects } from 'src/app/state/alumno-state.effects';
 import { authFeatureKey, authReducer } from 'src/app/components/state/auth.reducer';
+import { AlumnoService } from 'src/app/services/alumno.service';
 
 
 
@@ -49,6 +50,10 @@ import { authFeatureKey, authReducer } from 'src/app/components/state/auth.reduc
     // StoreModule.forRoot({}, {}),
     // StoreModule.forFeature(authFeatureKey, authReducer)
     // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+  ],
+
+  providers: [
+    AlumnoService
   ],
 })
 export class DashboardModule {}
