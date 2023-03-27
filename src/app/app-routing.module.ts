@@ -10,9 +10,7 @@ import { SesionGuard } from './core/guards/sesion.guard';
 //   { path: 'login', component: LoginComponent },
 //   // { path: 'dashboard', component: DashboardComponent },
 //   { path: 'dashboard', loadChildren: () => import('./components/dashboard/dashboard.module').then(x => x.DashboardModule) }
- 
 // ];
-
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -27,7 +25,6 @@ const routes: Routes = [
   {path: '', redirectTo: 'inicio', pathMatch: 'full'},
   
 ]
-
 
 
 @NgModule({

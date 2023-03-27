@@ -29,5 +29,3 @@ export class SesionService {
     this.sesion$.next(sesion);
   }
 }
-
-//services
