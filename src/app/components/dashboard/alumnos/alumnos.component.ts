@@ -32,12 +32,6 @@ export class AlumnosComponent implements OnInit {
   // dataSource = new MatTableDataSource(this.alumnos);
   dataSource!: MatTableDataSource<Alumno>;
 
-  // paginator
-  // @ViewChild(MatPaginator) paginator!: MatPaginator;
-  // ngAfterViewInit() {
-  //   this.dataSource.paginator = this.paginator;
-  // }
-
   constructor(
     private _alumnoService: AlumnoService, 
     private router: Router, 
@@ -46,19 +40,15 @@ export class AlumnosComponent implements OnInit {
     ) {}
 
   ngOnInit() {
+    
     this.cargando$ = this.store.select(selectCargandoAlumnos);
 
     this.alumnos$ = this.store.select(selectAlumnosCargados);
     this.sesion$ = this.sesion.obtenerSesion();
+
+    this.store.dispatch(cargarAlumnoState());
     
   }
-
-
-  // Buscar
-  // applyFilter(event: Event) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  // }
 
   // eliminar
   deleteAlumno(alumno: Alumno) {
@@ -66,7 +56,7 @@ export class AlumnosComponent implements OnInit {
     //   alert(`El alumno ${alumno.nombre} ${alumno.apellido} ha sido eliminado`);
     //   this.alumnos$ = this._alumnoService.getAlumnos();
     // });
-    alert(`El alumno ${alumno.nombre} ${alumno.apellido} ha sido eliminado`);
+    // alert(`El alumno ${alumno.nombre} ${alumno.apellido} ha sido eliminado`);
     this.store.dispatch(eliminarAlumnoState({ alumno }));
     
   }

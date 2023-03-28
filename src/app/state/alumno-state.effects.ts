@@ -26,7 +26,13 @@ export class AlumnosEffects{
             concatMap(({ alumno }) => {
                 return this.alumnos.addAlumno(alumno).pipe(
                     map((alumno: Alumno) => {
-                        this.snackBar.open(`${alumno.nombre} agregado con exito`);
+                        // this.snackBar.open(`${alumno.nombre} agregado con exito`);
+                        // alert(`${alumno.nombre} agregado con exito`)
+                        this.snackBar.open('Alumno agregado con exito', 'Close', {
+                            duration:3000,
+                            horizontalPosition:'center',
+                            verticalPosition:'bottom'
+                          } )
                         this.router.navigate(['dashboard']);
                         return cargarAlumnoState();
                     })
@@ -40,6 +46,11 @@ export class AlumnosEffects{
             concatMap(({ alumno }) => {
                 return this.alumnos.deleteAlumno(alumno).pipe(
                     map((alumno: Alumno) => {
+                        this.snackBar.open('Alumno eliminado con exito', 'Close', {
+                            duration:3000,
+                            horizontalPosition:'center',
+                            verticalPosition:'bottom'
+                          } )
                         return cargarAlumnoState();
                     })
                 )
@@ -53,6 +64,11 @@ export class AlumnosEffects{
             concatMap(({ alumno }) => {
                 return this.alumnos.updateAlumno(alumno).pipe(
                     map((alumno: Alumno) => {
+                        this.snackBar.open('Alumno editado con exito', 'Close', {
+                            duration:3000,
+                            horizontalPosition:'center',
+                            verticalPosition:'bottom'
+                          } )
                         return cargarAlumnoState();
                     })
                 )

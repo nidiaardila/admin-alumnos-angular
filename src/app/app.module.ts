@@ -33,7 +33,8 @@ import { StoreModule } from '@ngrx/store';
     // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   
     
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    
 
     // FormsModule,
     // ReactiveFormsModule

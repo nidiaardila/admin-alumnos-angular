@@ -64,7 +64,6 @@ export class EditComponent implements OnInit {
       this.store.dispatch(editarAlumnoState({alumno: alumno}));
       this.router.navigate(['dashboard']);
       this._alumnoService.getAlumnos();
-      alert(`El alumno se modifico con exito`);
     });
     
     
