@@ -28,9 +28,6 @@ export class SesionGuard implements CanActivate, CanActivateChild, CanLoad {
     );
   }
 
-
-
-
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

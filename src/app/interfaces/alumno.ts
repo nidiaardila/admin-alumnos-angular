@@ -6,8 +6,3 @@ export interface Alumno {
     estatus: String;
   }
   
-//   export enum Estatus {
-//       Activo = 'Activo',
-//       Inactivo = 'Inactivo',
-//       Graduado = 'Graduado'
-//   }

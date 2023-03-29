@@ -48,9 +48,6 @@ import { AlumnoService } from 'src/app/services/alumno.service';
     ReactiveFormsModule,
     StoreModule.forFeature(alumnoStateFeatureKey, reducer),
     EffectsModule.forFeature([AlumnosEffects])
-    // StoreModule.forRoot({}, {}),
-    // StoreModule.forFeature(authFeatureKey, authReducer)
-    // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
     
   ],
 

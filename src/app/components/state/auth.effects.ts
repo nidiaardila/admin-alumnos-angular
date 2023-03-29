@@ -14,8 +14,7 @@ export class AuthEffects {
   cargarAuths$ = createEffect(() => {
     return this.actions$.pipe( 
 
-      ofType(AuthActions.cargarAuths),
-      /** An EMPTY observable only emits completion. Replace with your own observable API request */
+      // ofType(AuthActions.cargarAuths),
       concatMap(() => EMPTY as Observable<{ type: string }>)
     );
   });

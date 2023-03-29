@@ -53,10 +53,8 @@ export class AlumnosComponent implements OnInit {
   // eliminar
   deleteAlumno(alumno: Alumno) {
     // this._alumnoService.deleteAlumno(alumno).subscribe((alumno:Alumno)=>{
-    //   alert(`El alumno ${alumno.nombre} ${alumno.apellido} ha sido eliminado`);
     //   this.alumnos$ = this._alumnoService.getAlumnos();
     // });
-    // alert(`El alumno ${alumno.nombre} ${alumno.apellido} ha sido eliminado`);
     this.store.dispatch(eliminarAlumnoState({ alumno }));
     
   }
