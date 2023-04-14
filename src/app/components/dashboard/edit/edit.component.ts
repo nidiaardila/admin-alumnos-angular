@@ -58,7 +58,6 @@ export class EditComponent implements OnInit {
       estatus: this.form.value.estatus
     }
 
-    // this._alumnoService.updateAlumno(alumno);
     this._alumnoService.updateAlumno(alumno).subscribe((alumno: Alumno)=>{
       console.log(alumno);
       this.store.dispatch(editarAlumnoState({alumno: alumno}));

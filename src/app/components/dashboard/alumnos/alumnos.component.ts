@@ -28,8 +28,6 @@ export class AlumnosComponent implements OnInit {
   // alumnos: Alumno[] = [];
 
   displayedColumns: string[] = ['cod', 'nombreCompleto', 'estatus', 'acciones'];
-  // displayedColumns: string[] = ['cod', 'nombre', 'apellido', 'estatus', 'acciones'];
-  // dataSource = new MatTableDataSource(this.alumnos);
   dataSource!: MatTableDataSource<Alumno>;
 
   constructor(
@@ -52,9 +50,6 @@ export class AlumnosComponent implements OnInit {
 
   // eliminar
   deleteAlumno(alumno: Alumno) {
-    // this._alumnoService.deleteAlumno(alumno).subscribe((alumno:Alumno)=>{
-    //   this.alumnos$ = this._alumnoService.getAlumnos();
-    // });
     this.store.dispatch(eliminarAlumnoState({ alumno }));
     
   }

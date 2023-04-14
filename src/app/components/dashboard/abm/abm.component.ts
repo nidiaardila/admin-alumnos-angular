@@ -44,11 +44,6 @@ export class AbmComponent implements OnInit {
       estatus: this.form.value.estatus
     }
     this.store.dispatch(agregarAlumnoState({ alumno: alumno }))
-    // this._alumnoService.addAlumno(alumno).subscribe((alumno: Alumno) => {
-     
-    //   this.router.navigate(['/dashboard']);
-    //   alert(`${alumno.nombre} ${alumno.nombre} agregado con exito`);
-    // });
   }
 
 }
