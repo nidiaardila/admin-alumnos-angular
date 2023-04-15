@@ -4,13 +4,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component'
 import { SesionGuard } from './core/guards/sesion.guard';
 
-// const routes: Routes = [
-//   { path: '', redirectTo: '/login', pathMatch: 'full' }, //iniciar la app en el login
-//   // { path: '**', redirectTo: 'login', pathMatch: 'full' }, //redireccionar al login si una ruta no existe
-//   { path: 'login', component: LoginComponent },
-//   // { path: 'dashboard', component: DashboardComponent },
-//   { path: 'dashboard', loadChildren: () => import('./components/dashboard/dashboard.module').then(x => x.DashboardModule) }
-// ];
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },

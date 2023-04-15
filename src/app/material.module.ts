@@ -10,12 +10,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { MatOptionModule } from '@angular/material/core';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 
+import {MatCardModule} from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 import { HttpClientModule } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -32,11 +38,18 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatInputModule,
     MatSidenavModule,
+    MatSidenavModule,
     MatListModule,
-    MatMenuModule,
     MatOptionModule,
     MatSnackBarModule,
-
+    MatDatepickerModule,
+    MatSlideToggleModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatCardModule,
     HttpClientModule
   
   ],
@@ -55,11 +68,16 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     MatOptionModule,
     MatSnackBarModule,
-
+    MatDatepickerModule,
+    MatSlideToggleModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatCardModule,
     HttpClientModule
 
-   
-   
   ]
 })
 export class MaterialModule { }

@@ -13,7 +13,10 @@ import { CoreModule } from './core/core.module';
 
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+// import { CursosModule } from './components/cursos/cursos.module';
+import { DashboardModule } from './components/dashboard/dashboard.module';
 // import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 
 
 
@@ -28,7 +31,9 @@ import { StoreModule } from '@ngrx/store';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    // CursosModule,
     CoreModule,
+    // DashboardModule,
     StoreModule.forRoot({}, {}),
     // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   

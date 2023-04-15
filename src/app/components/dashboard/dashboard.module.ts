@@ -22,6 +22,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { AlumnosEffects } from 'src/app/state/alumno-state.effects';
 import { authFeatureKey, authReducer } from 'src/app/components/state/auth.reducer';
 import { AlumnoService } from 'src/app/services/alumno.service';
+// import { CursosModule } from '../cursos/cursos.module';
+
 
 
 
@@ -46,8 +48,10 @@ import { AlumnoService } from 'src/app/services/alumno.service';
     DashboardRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
+    // CursosModule,
     StoreModule.forFeature(alumnoStateFeatureKey, reducer),
-    EffectsModule.forFeature([AlumnosEffects])
+    EffectsModule.forFeature([AlumnosEffects]),
+    
     
   ],
 
