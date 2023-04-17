@@ -6,11 +6,8 @@ import {env} from 'src/environment/environment'
 
 @Injectable({
   providedIn: 'root',
-})
-// @Injectable()  
+}) 
 export class AlumnoService {
-
-  // const url = https://6405f14deed195a99f917bbe.mockapi.io/:endpoint;
 
   constructor(private http: HttpClient) {
     

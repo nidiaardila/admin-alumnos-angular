@@ -5,10 +5,10 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ProfesorService } from 'src/app/core/services/profesor.service';
 import { Curso } from 'src/app/interfaces/curso';
-import { Profesor } from 'src/app/interfaces/profesor';
-import { CursosService } from '../../services/cursos.service';
-import { agregarCursoState } from '../../state/curso-state.actions';
-import { CursoState } from '../../state/curso-state.reducer';
+// import { Profesor } from 'src/app/interfaces/profesor';
+import { CursosService } from 'src/app/services/cursos.service';
+import { agregarCursoState } from 'src/app/state/curso-state.actions';
+import { CursoState } from 'src/app/state/curso-state.reducer';
 
 @Component({
   selector: 'app-agregar-curso',
@@ -22,7 +22,7 @@ export class AgregarCursoComponent implements OnInit{
   constructor(
     private router: Router,
     private cursoService: CursosService,
-    private profesores: ProfesorService,
+    // private profesores: ProfesorService,
     private store: Store<CursoState>
   ){}
 
@@ -39,15 +39,15 @@ export class AgregarCursoComponent implements OnInit{
   }
 
   agregarCurso(){
-    let curso: Curso = {
-      id: '',
-      nombre: this.formulario.value.nombre,
-      comision: this.formulario.value.comision,
-      fechaInicio: this.formulario.value.fechaInicio,
-      fechaFin: this.formulario.value.fechaFin,
-      inscripcionAbierta: this.formulario.value.inscripcionAbierta,
-      profesor: this.formulario.value.profesor
-    }
-    this.store.dispatch(agregarCursoState({ curso: curso }));
+  //   let curso: Curso = {
+  //     id: '',
+  //     nombre: this.formulario.value.nombre,
+  //     comision: this.formulario.value.comision,
+  //     fechaInicio: this.formulario.value.fechaInicio,
+  //     fechaFin: this.formulario.value.fechaFin,
+  //     inscripcionAbierta: this.formulario.value.inscripcionAbierta,
+  //     profesor: this.formulario.value.profesor
+  //   }
+  //   this.store.dispatch(agregarCursoState({ curso: curso }));
   }
 }

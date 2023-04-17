@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+th {
+  width: 20%;
+}
+
+.acciones {
+  cursor: pointer;
+}
+
+.agregar{
+  float: right;
+}

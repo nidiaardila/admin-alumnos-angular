@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Curso } from 'src/app/interfaces/curso';
-import { CursosService } from '../../services/cursos.service';
-import { cargarCursoState } from '../../state/curso-state.actions';
-import { CursoState } from '../../state/curso-state.reducer';
+import { CursosService } from 'src/app/services/cursos.service';
+import { cargarCursoState } from 'src/app/state/curso-state.actions';
+import { CursoState } from 'src/app/state/curso-state.reducer';
 
 @Component({
   selector: 'app-cursos-inicio',

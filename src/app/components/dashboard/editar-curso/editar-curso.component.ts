@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 import { ProfesorService } from 'src/app/core/services/profesor.service';
 import { Curso } from 'src/app/interfaces/curso';
 import { Profesor } from 'src/app/interfaces/profesor';
-import { CursosService } from '../../services/cursos.service';
-import { editarCursoState } from '../../state/curso-state.actions';
-import { CursoState } from '../../state/curso-state.reducer';
+import { CursosService } from 'src/app/services/cursos.service';
+import { editarCursoState } from 'src/app/state/curso-state.actions';
+import { CursoState } from 'src/app/state/curso-state.reducer';
 
 @Component({
   selector: 'app-editar-curso',
@@ -41,18 +41,18 @@ export class EditarCursoComponent implements OnInit{
     })
   }
 
-  editarCurso(){
-    let curso: Curso = {
-      id: this.curso.id,
-      nombre: this.formulario.value.nombre,
-      comision: this.formulario.value.comision,
-      fechaInicio: this.formulario.value.fechaInicio,
-      fechaFin: this.formulario.value.fechaFin,
-      inscripcionAbierta: this.formulario.value.inscripcionAbierta,
-      profesor: this.formulario.value.profesor
-    };
+  // editarCurso(){
+  //   let curso: Curso = {
+  //     id: this.curso.id,
+  //     nombre: this.formulario.value.nombre,
+  //     comision: this.formulario.value.comision,
+  //     fechaInicio: this.formulario.value.fechaInicio,
+  //     fechaFin: this.formulario.value.fechaFin,
+  //     inscripcionAbierta: this.formulario.value.inscripcionAbierta,
+  //     profesor: this.formulario.value.profesor
+  //   };
     
-    this.store.dispatch(editarCursoState({curso: curso}));
-    this.dialogRef.close(curso);
-  }
+  //   this.store.dispatch(editarCursoState({curso: curso}));
+  //   this.dialogRef.close(curso);
+  // }
 }

@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { concatMap, map } from "rxjs";
 import { Curso } from "src/app/interfaces/curso";
-import { CursosService } from "../services/cursos.service";
+import { CursosService } from "src/app/services/cursos.service";
 import { agregarCursoState, cargarCursoState, cursosCargados, editarCursoState, eliminarCursoState } from "./curso-state.actions";
 
 @Injectable()
@@ -13,7 +13,7 @@ export class CursosEffects{
         return this.actions$.pipe( // Obserable2
             ofType(cargarCursoState),
             concatMap(() => {
-                return this.cursos.obtenerCursos().pipe( // Obsaervable1
+                return this.cursos.getCursos().pipe( // Obsaervable1
                     map((c: Curso[]) => cursosCargados({ cursos: c }))
                 )
             })
@@ -23,7 +23,7 @@ export class CursosEffects{
         return this.actions$.pipe(
             ofType(agregarCursoState),
             concatMap(({ curso }) => {
-                return this.cursos.agregarCurso(curso).pipe(
+                return this.cursos.addCurso(curso).pipe(
                     map((curso: Curso) => {
                         this.snackBar.open(`${curso.nombre} agregado satisfactoriamente`);
                         this.router.navigate(['cursos/listar']);
@@ -37,7 +37,7 @@ export class CursosEffects{
         return this.actions$.pipe(
             ofType(eliminarCursoState),
             concatMap(({ curso }) => {
-                return this.cursos.eliminarCurso(curso).pipe(
+                return this.cursos.deleteCurso(curso).pipe(
                     map((curso: Curso) => {
                         return cargarCursoState();
                     })
@@ -50,7 +50,7 @@ export class CursosEffects{
         return this.actions$.pipe(
             ofType(editarCursoState),
             concatMap(({ curso }) => {
-                return this.cursos.editarCurso(curso).pipe(
+                return this.cursos.updateCurso(curso).pipe(
                     map((curso: Curso) => {
                         return cargarCursoState();
                     })
