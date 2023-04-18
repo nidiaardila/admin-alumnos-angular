@@ -67,6 +67,6 @@ export class CursosComponent implements OnInit{
 
   redirigirEditCurso(curso: Curso) {
     
-    this.router.navigate(['/dashboard/abmCursos', curso]);
+    this.router.navigate(['/dashboard/editarCurso', curso]);
   }
 }

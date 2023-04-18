@@ -1,13 +1,15 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { HttpParams } from '@angular/common/http';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Curso } from 'src/app/interfaces/curso';
-import { CursosService } from 'src/app/services/cursos.service';
-import { editarCursoState } from 'src/app/state/curso-state.actions';
+import { Alumno } from 'src/app/interfaces/alumno';
+
+import { Store } from '@ngrx/store';
 import { CursoState } from 'src/app/state/curso-state.reducer';
+import { CursosService } from 'src/app/services/cursos.service';
+import { Curso } from 'src/app/interfaces/curso';
+import { editarCursoState } from 'src/app/state/curso-state.actions';
 
 @Component({
   selector: 'app-editar-curso',
@@ -15,41 +17,61 @@ import { CursoState } from 'src/app/state/curso-state.reducer';
   styleUrls: ['./editar-curso.component.css']
 })
 export class EditarCursoComponent implements OnInit{
-  formulario!: FormGroup;
-  // profesores$!: Observable<Profesor[]>;
+  form!: FormGroup;
+  id2!: string;
 
   constructor(
-    private cursoService: CursosService,
-    private router: Router,
-    private dialogRef: MatDialogRef<EditarCursoComponent>,
-    private store: Store<CursoState>,
-    @Inject(MAT_DIALOG_DATA) public curso: Curso
+    private fb: FormBuilder, 
+    private activatedRoute: ActivatedRoute,
+     private router:Router, 
+     private _cursoService : CursosService,
+     private store: Store<CursoState>
   ){}
 
+
   ngOnInit(): void {
-    // this.profesores$ = this.profesores.obtenerProfesores();
-    this.formulario = new FormGroup({
-      comision: new FormControl(this.curso.comision),
-      fechaFin: new FormControl(this.curso.fechaFin),
-      fechaInicio: new FormControl(this.curso.fechaInicio),
-      disponibilidad: new FormControl(this.curso.disponibilidad),
-      nombre: new FormControl(this.curso.nombre),
-      profesor: new FormControl(this.curso.profesor)
+    this.activatedRoute.paramMap.subscribe((parametros) => {
+      console.log(parametros);
+      this.form = new FormGroup({
+        cod: new FormControl(parametros.get('cod')),
+        nombre: new FormControl(parametros.get('nombre')),
+        comision: new FormControl(parametros.get('comision')),
+        profesor: new FormControl(parametros.get('profesor')),
+        disponibilidad: new FormControl(parametros.get('disponibilidad')),
+        fechaInicio: new FormControl(parametros.get('fechaInicio')),
+        fechaFin: new FormControl(parametros.get('fechaFin'))
+        
+      })
     })
   }
 
-  // editarCurso(){
-  //   let curso: Curso = {
-  //     id: this.curso.id,
-  //     nombre: this.formulario.value.nombre,
-  //     comision: this.formulario.value.comision,
-  //     fechaInicio: this.formulario.value.fechaInicio,
-  //     fechaFin: this.formulario.value.fechaFin,
-  //     inscripcionAbierta: this.formulario.value.inscripcionAbierta,
-  //     profesor: this.formulario.value.profesor
-  //   };
+  updateCurso(){ 
+    this.activatedRoute
+      .paramMap
+      .subscribe(params => {        
+        this.id2 = String(params.get('id'));
+       console.log(params.get('id'));
+      });   
+    let curso: Curso = {
+      id: this.id2,
+      cod: this.form.value.cod,
+      nombre: this.form.value.nombre,
+      comision: this.form.value.comision,
+      profesor: this.form.value.profesor,
+      disponibilidad: this.form.value.disponibilidad,
+      fechaInicio: this.form.value.fechaInicio,
+      fechaFin: this.form.value.fechaFin
+    }
+
+    this._cursoService.updateCurso(curso).subscribe((curso: Curso)=>{
+      console.log(curso);
+      this.store.dispatch(editarCursoState({curso: curso}));
+      this.router.navigate(['dashboard/cursos']);
+      this._cursoService.getCursos();
+    });
     
-  //   this.store.dispatch(editarCursoState({curso: curso}));
-  //   this.dialogRef.close(curso);
-  // }
+    
+    
+  }
+
 }

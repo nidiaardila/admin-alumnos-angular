@@ -42,3 +42,70 @@
     <button mat-raised-button color="primary" (click)="editarCurso()">Editar</button>
 </div> -->
 
+
+ 
+
+<div class="container">
+    <app-toolbar></app-toolbar>
+    <mat-toolbar >
+        <h1 class="title" > Editar Alumno </h1>
+    </mat-toolbar>
+    
+    <form [formGroup]="form" (ngSubmit)="updateCurso()" class="form mt-4">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Cod</mat-label>
+                 <input matInput autocomplete="off" formControlName="cod">
+            </mat-form-field >
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                 <input matInput autocomplete="off" formControlName="nombre">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Comision</mat-label>
+                 <input matInput autocomplete="off" formControlName="comision">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Profesor</mat-label>
+                 <input matInput autocomplete="off" formControlName="profesor">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Disponibilidad</mat-label>
+                 <input matInput autocomplete="off" formControlName="disponibilidad">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>FechaInicio</mat-label>
+                 <input matInput autocomplete="off" formControlName="fechaInicio">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>fechaFin</mat-label>
+                 <input matInput autocomplete="off" formControlName="fechaFin">
+            </mat-form-field>
+        </div>
+
+        <div id="btn-alumno">
+            <button type="submit" mat-fab extended color="primary" class="agregar mt-4" >
+                <mat-icon>done</mat-icon>
+                Aceptar
+              </button>
+              <button type="reset" routerLink="/dashboard/cursos" mat-fab extended color="warn" class="agregar mt-4" >
+                <mat-icon>clear</mat-icon>
+                Cancelar
+              </button>
+            </div>
+        
+    </form>
+
+</div>

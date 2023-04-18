@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'alumnos', component: AlumnosComponent },
   { path: 'cursos', component: CursosComponent },
-  { path: 'editar', component: EditarCursoComponent },
+  { path: 'editarCurso', component: EditarCursoComponent },
   { path: 'agregarCurso', component: AgregarCursoComponent },
   // { path: 'abmCursos', component: AbmCursosComponent}
   // { path: 'editar', component: EditarCursoComponent, canActivate: [AdminGuard] },
