@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 
     if(user.usuario == 'Nidia' && user.contrasena== '123'){
       this.login.login(user)
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['dashboard/alumnos']);
       console.log('Bienvenid@')
 
     } else{

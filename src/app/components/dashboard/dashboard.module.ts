@@ -15,7 +15,6 @@ import { TamanoFuenteDirective } from 'src/app/directives/tamano-fuente.directiv
 import { EditComponent } from './edit/edit.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { LoginComponent } from '../login/login.component';
-import { ListaCursosComponent } from 'src/app/components/dashboard/lista-cursos/lista-cursos.component';
 import { AgregarCursoComponent } from 'src/app/components/dashboard/agregar-curso/agregar-curso.component';
 import { DetalleCursoComponent } from 'src/app/components/dashboard/detalle-curso/detalle-curso.component';
 import { EditarCursoComponent } from 'src/app/components/dashboard/editar-curso/editar-curso.component';
@@ -45,7 +44,8 @@ import { CursosEffects } from 'src/app/state/curso-state.effects';
     EditComponent,
     CursosComponent,
     LoginComponent,
-    ListaCursosComponent,
+  
+    // ListaCursosComponent,
     AgregarCursoComponent,
     DetalleCursoComponent,
     EditarCursoComponent,

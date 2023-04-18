@@ -1,42 +1,71 @@
+
 <div class="container">
-    <form [formGroup]="formulario" (ngSubmit)="agregarCurso()">
-        <div class="row">
-            <mat-form-field class="col-md-6">
-                <mat-label>Nombre</mat-label>
-                <input matInput formControlName="nombre">
-            </mat-form-field>
+    <app-toolbar></app-toolbar>
+    <mat-toolbar >
+        <h1 class="title" > Nuevo Curso </h1>
+    </mat-toolbar>
 
-            <mat-form-field class="col-md-6">
-                <mat-label>Comision</mat-label>
-                <input matInput formControlName="comision">
-            </mat-form-field>
-
-            <mat-form-field class="col-md-6">
-                <mat-label>Fecha Inicio</mat-label>
-                <input matInput [matDatepicker]="fechaInicio" formControlName="fechaInicio">
-                <mat-datepicker-toggle matSuffix [for]="fechaInicio"></mat-datepicker-toggle>
-                <mat-datepicker #fechaInicio></mat-datepicker>
-            </mat-form-field>
-
-            <mat-form-field class="col-md-6">
-                <mat-label>Fecha Fin</mat-label>
-                <input matInput [matDatepicker]="fechaFin" formControlName="fechaFin">
-                <mat-datepicker-toggle matSuffix [for]="fechaFin"></mat-datepicker-toggle>
-                <mat-datepicker #fechaFin></mat-datepicker>
-            </mat-form-field>
-
-            <mat-form-field class="col-md-6">
-                <mat-label>Profesor</mat-label>
-                <input matInput formControlName="profesor">
-            </mat-form-field>
-
-            <div class="col-md-6">
-                <mat-slide-toggle formControlName="inscripcionAbierta">Inscripcion abierta</mat-slide-toggle>
-            </div>
-
-            <div class="col-md-6">
-                <button mat-raised-button color="primary" type="submit">Agregar</button>
-            </div>
+    <form [formGroup]="form" (ngSubmit)="addCurso()" class="form mt-4">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Cod</mat-label>
+                 <input matInput autocomplete="off" formControlName="cod">
+            </mat-form-field >
         </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                 <input matInput autocomplete="off" formControlName="nombre">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Comision</mat-label>
+                 <input matInput autocomplete="off" formControlName="comision">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Profesor</mat-label>
+                 <input matInput autocomplete="off" formControlName="profesor">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Disponibilidad</mat-label>
+                 <input matInput autocomplete="off" formControlName="disponibilidad">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Inicio</mat-label>
+                 <input matInput autocomplete="off" formControlName="fechaInicio" type="date">
+                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Termina</mat-label>
+                 <input matInput autocomplete="off" formControlName="fechaFin" type="date">
+                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            </mat-form-field>
+        </div>
+
+        <div id="btn-alumno">
+            <button type="submit" mat-fab extended color="primary" class="agregar mt-4" [disabled]="form.invalid" >
+                <mat-icon>done</mat-icon>
+                Aceptar
+              </button>
+              <button type="reset" routerLink="/dashboard/cursos" mat-fab extended color="warn" class="agregar mt-4" >
+                <mat-icon>clear</mat-icon>
+                Cancelar
+              </button>
+            </div>
+        
     </form>
+
+   
+    
+
 </div>

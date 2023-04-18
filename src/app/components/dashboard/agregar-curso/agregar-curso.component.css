@@ -1,0 +1,16 @@
+.container{
+    text-align:center;
+}
+
+.title{
+    margin:auto
+}
+
+mat-form-field{
+    width: 30%;
+}
+
+btn-alumno{
+    display: flex;
+    justify-content: flex-end;
+}

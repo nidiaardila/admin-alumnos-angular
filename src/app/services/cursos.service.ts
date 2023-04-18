@@ -63,6 +63,8 @@ export class CursosService {
       catchError(this.capturarError)
     );
   }
+ 
+
 
   private capturarError(error: HttpErrorResponse){
     if(error.error instanceof ErrorEvent){

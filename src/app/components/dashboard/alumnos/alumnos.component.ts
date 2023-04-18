@@ -25,9 +25,10 @@ export class AlumnosComponent implements OnInit {
   sesion$!: Observable<Sesion>;
   cargando$!: Observable<Boolean>
 
-  // alumnos: Alumno[] = [];
+
 
   displayedColumns: string[] = ['cod', 'nombreCompleto', 'estatus', 'acciones'];
+  // displayedColumns: string[] = ['cod'];
   dataSource!: MatTableDataSource<Alumno>;
 
   constructor(

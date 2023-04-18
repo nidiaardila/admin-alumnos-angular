@@ -1,4 +1,10 @@
 <!-- agregar alumno -->
+<div class="container">
+  <div class="row">
+      <app-toolbar class="col-12"></app-toolbar>
+  </div>
+  <div class="row">
+      <app-navbar class="col-1"></app-navbar>
 
 <button mat-fab extended color="primary" class="agregar mt-4" routerLink="/dashboard/abm">
     <mat-icon>add</mat-icon>
@@ -36,9 +42,11 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
- </div>
 </div>
-
+</div>
+</div>
+</div>
+<router-outlet></router-outlet>
 
 
 

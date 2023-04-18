@@ -2,11 +2,11 @@
 
 export interface Curso{
     id: string;
-    cod: string;
+    cod: number;
     nombre: string;
     comision: number;
     profesor: string;
-    inscripcionAbierta: boolean;
+    disponibilidad: boolean;
     fechaInicio: Date;
     fechaFin: Date;
 }

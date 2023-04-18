@@ -7,7 +7,6 @@ import { CursosComponent } from './cursos/cursos.component';
 import { DashboardComponent } from './dashboard.component';
 import { EditComponent } from './edit/edit.component';
 import { EditarCursoComponent } from './editar-curso/editar-curso.component';
-import { ListaCursosComponent } from './lista-cursos/lista-cursos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
@@ -17,9 +16,9 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'alumnos', component: AlumnosComponent },
   { path: 'cursos', component: CursosComponent },
-  { path: 'listar', component: ListaCursosComponent },
   { path: 'editar', component: EditarCursoComponent },
-  { path: 'agregar', component: AgregarCursoComponent },
+  { path: 'agregarCurso', component: AgregarCursoComponent },
+  // { path: 'abmCursos', component: AbmCursosComponent}
   // { path: 'editar', component: EditarCursoComponent, canActivate: [AdminGuard] },
   // { path: 'agregar', component: AgregarCursoComponent, canActivate: [AdminGuard] },
 ];

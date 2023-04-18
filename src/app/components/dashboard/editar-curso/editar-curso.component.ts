@@ -4,9 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { ProfesorService } from 'src/app/core/services/profesor.service';
 import { Curso } from 'src/app/interfaces/curso';
-import { Profesor } from 'src/app/interfaces/profesor';
 import { CursosService } from 'src/app/services/cursos.service';
 import { editarCursoState } from 'src/app/state/curso-state.actions';
 import { CursoState } from 'src/app/state/curso-state.reducer';
@@ -23,7 +21,6 @@ export class EditarCursoComponent implements OnInit{
   constructor(
     private cursoService: CursosService,
     private router: Router,
-    private profesores: ProfesorService,
     private dialogRef: MatDialogRef<EditarCursoComponent>,
     private store: Store<CursoState>,
     @Inject(MAT_DIALOG_DATA) public curso: Curso
@@ -35,7 +32,7 @@ export class EditarCursoComponent implements OnInit{
       comision: new FormControl(this.curso.comision),
       fechaFin: new FormControl(this.curso.fechaFin),
       fechaInicio: new FormControl(this.curso.fechaInicio),
-      inscripcionAbierta: new FormControl(this.curso.inscripcionAbierta),
+      disponibilidad: new FormControl(this.curso.disponibilidad),
       nombre: new FormControl(this.curso.nombre),
       profesor: new FormControl(this.curso.profesor)
     })

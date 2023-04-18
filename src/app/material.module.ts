@@ -15,9 +15,11 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
 
 import {MatCardModule} from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+
 
 
 
@@ -77,7 +79,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatProgressSpinnerModule,
     MatSnackBarModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepicker
 
   ]
 })

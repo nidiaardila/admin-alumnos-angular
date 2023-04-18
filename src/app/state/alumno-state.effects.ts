@@ -33,7 +33,7 @@ export class AlumnosEffects{
                             horizontalPosition:'center',
                             verticalPosition:'bottom'
                           } )
-                        this.router.navigate(['dashboard']);
+                        this.router.navigate(['dashboard/alumnos']);
                         return cargarAlumnoState();
                     })
                 )

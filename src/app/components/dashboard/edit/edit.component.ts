@@ -61,7 +61,7 @@ export class EditComponent implements OnInit {
     this._alumnoService.updateAlumno(alumno).subscribe((alumno: Alumno)=>{
       console.log(alumno);
       this.store.dispatch(editarAlumnoState({alumno: alumno}));
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['dashboard/alumnos']);
       this._alumnoService.getAlumnos();
     });
     
