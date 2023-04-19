@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   accept() {
-    // console.log(this.form);
      let user: Usuario = {
       usuario: this.form.value.user,
       contrasena: this.form.value.password

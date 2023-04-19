@@ -16,7 +16,6 @@ import { EditComponent } from './edit/edit.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { LoginComponent } from '../login/login.component';
 import { AgregarCursoComponent } from 'src/app/components/dashboard/agregar-curso/agregar-curso.component';
-import { DetalleCursoComponent } from 'src/app/components/dashboard/detalle-curso/detalle-curso.component';
 import { EditarCursoComponent } from 'src/app/components/dashboard/editar-curso/editar-curso.component';
 import { CursosInicioComponent } from 'src/app/components/dashboard/cursos-inicio/cursos-inicio.component';
 
@@ -30,7 +29,6 @@ import { CursosService } from 'src/app/services/cursos.service';
 import { cursoStateFeatureKey } from 'src/app/state/curso-state.reducer';
 import { CursosEffects } from 'src/app/state/curso-state.effects';
 
-// import { CursosModule } from '../cursos/cursos.module';
 
 @NgModule({
   declarations: [
@@ -44,12 +42,8 @@ import { CursosEffects } from 'src/app/state/curso-state.effects';
     EditComponent,
     CursosComponent,
     LoginComponent,
-  
-    // ListaCursosComponent,
     AgregarCursoComponent,
-    DetalleCursoComponent,
     EditarCursoComponent,
-    // TablaCursosComponent,
     CursosInicioComponent
     
   
@@ -59,7 +53,6 @@ import { CursosEffects } from 'src/app/state/curso-state.effects';
     DashboardRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    // CursosModule,
     StoreModule.forFeature(alumnoStateFeatureKey, reducer),
     EffectsModule.forFeature([AlumnosEffects]),
     StoreModule.forFeature(cursoStateFeatureKey, reducer),

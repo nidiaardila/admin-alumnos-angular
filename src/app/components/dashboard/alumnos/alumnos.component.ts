@@ -28,7 +28,6 @@ export class AlumnosComponent implements OnInit {
 
 
   displayedColumns: string[] = ['cod', 'nombreCompleto', 'estatus', 'acciones'];
-  // displayedColumns: string[] = ['cod'];
   dataSource!: MatTableDataSource<Alumno>;
 
   constructor(
@@ -52,7 +51,6 @@ export class AlumnosComponent implements OnInit {
   // eliminar
   deleteAlumno(alumno: Alumno) {
     this.store.dispatch(eliminarAlumnoState({ alumno }));
-    
   }
 
   redirigirEditAlumno(alumno: Alumno) {

@@ -27,7 +27,7 @@ export class CursosComponent implements OnInit{
   cargando$!: Observable<Boolean>
 
   // displayedColumns: string[] = ['cod', 'nombreCurso', 'comision', 'profesor', 'inscripcionAbierta', 'fechaInicio', 'fechaFin', 'acciones'];
-  displayedColumns: string[] = ['cod', 'nombre', 'comision', 'profesor', 'disponibilidad', 'fechaInicio', 'fechaFin', 'acciones'];
+  displayedColumns: string[] = ['cod', 'nombre', 'comision', 'profesor', 'inscripcion', 'fechaInicio', 'fechaFin', 'acciones'];
   dataSource!: MatTableDataSource<Curso>;
 
   constructor(
@@ -40,13 +40,6 @@ export class CursosComponent implements OnInit{
   ){}
 
   ngOnInit() {
-    // this.cargando$ = this.store.select(selectCargandoCursos);
-
-    // this.cursos$ = this.store.select(selectCursosCargados);
-    // this.sesion$ = this.sesion.obtenerSesion();
-
-    // this.store.dispatch(cargarCursoState());
-
     this.cursos$ = this._cursoService.getCursos();
     this.sesion$ = this.sesion.obtenerSesion();
     
@@ -59,11 +52,6 @@ export class CursosComponent implements OnInit{
     });
     
   }
-
-  // deleteCurso(curso: Curso) {
-  //   this.store.dispatch(eliminarCursoState({ curso }));
-    
-  // }
 
   redirigirEditCurso(curso: Curso) {
     

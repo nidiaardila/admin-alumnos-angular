@@ -65,8 +65,6 @@ export class EditComponent implements OnInit {
       this._alumnoService.getAlumnos();
     });
     
-    
-    
   }
 
 }

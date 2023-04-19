@@ -18,9 +18,6 @@ const routes: Routes = [
   { path: 'cursos', component: CursosComponent },
   { path: 'editarCurso', component: EditarCursoComponent },
   { path: 'agregarCurso', component: AgregarCursoComponent },
-  // { path: 'abmCursos', component: AbmCursosComponent}
-  // { path: 'editar', component: EditarCursoComponent, canActivate: [AdminGuard] },
-  // { path: 'agregar', component: AgregarCursoComponent, canActivate: [AdminGuard] },
 ];
 
 @NgModule({

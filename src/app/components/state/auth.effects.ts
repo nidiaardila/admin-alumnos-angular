@@ -14,7 +14,6 @@ export class AuthEffects {
   cargarAuths$ = createEffect(() => {
     return this.actions$.pipe( 
 
-      // ofType(AuthActions.cargarAuths),
       concatMap(() => EMPTY as Observable<{ type: string }>)
     );
   });

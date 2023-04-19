@@ -37,7 +37,7 @@ export class EditarCursoComponent implements OnInit{
         nombre: new FormControl(parametros.get('nombre')),
         comision: new FormControl(parametros.get('comision')),
         profesor: new FormControl(parametros.get('profesor')),
-        disponibilidad: new FormControl(parametros.get('disponibilidad')),
+        inscripcion: new FormControl(parametros.get('inscripcion')),
         fechaInicio: new FormControl(parametros.get('fechaInicio')),
         fechaFin: new FormControl(parametros.get('fechaFin'))
         
@@ -58,7 +58,7 @@ export class EditarCursoComponent implements OnInit{
       nombre: this.form.value.nombre,
       comision: this.form.value.comision,
       profesor: this.form.value.profesor,
-      disponibilidad: this.form.value.disponibilidad,
+      inscripcion: this.form.value.inscripcion,
       fechaInicio: this.form.value.fechaInicio,
       fechaFin: this.form.value.fechaFin
     }
@@ -69,9 +69,7 @@ export class EditarCursoComponent implements OnInit{
       this.router.navigate(['dashboard/cursos']);
       this._cursoService.getCursos();
     });
-    
-    
-    
+      
   }
 
 }

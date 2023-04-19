@@ -13,12 +13,7 @@ import { CoreModule } from './core/core.module';
 
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-// import { CursosModule } from './components/cursos/cursos.module';
 import { DashboardModule } from './components/dashboard/dashboard.module';
-// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
-
-
 
 @NgModule({
   declarations: [
@@ -31,18 +26,10 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    // CursosModule,
     CoreModule,
-    // DashboardModule,
     StoreModule.forRoot({}, {}),
-    // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-  
-    
     EffectsModule.forRoot([]),
-    
-
-    // FormsModule,
-    // ReactiveFormsModule
+   
   ],
   exports: [],
 

@@ -16,13 +16,11 @@ export class AbmComponent implements OnInit {
 
   form!: FormGroup;
 
-
   constructor(
     private fb: FormBuilder, 
     private router:Router, 
     private _alumnoService: AlumnoService,
     private store: Store<AlumnoState>,
-  
     ){
   
   }

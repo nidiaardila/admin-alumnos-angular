@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, Observable, Subscriber, throwError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { Curso } from 'src/app/interfaces/curso';
 import { env } from 'src/environment/environment';
 
@@ -21,17 +21,6 @@ export class CursosService {
     return result;
   }
 
-  // obtenerCursos(): Observable<Curso[]>{
-  //   return this.http.get<Curso[]>(`${env.apiURL}/cursos`, {
-  //     headers: new HttpHeaders({
-  //       'content-type': 'application/json',
-  //       'encoding': 'UTF-8'
-  //     })
-  //   }).pipe(
-  //     catchError(this.capturarError)
-  //   );
-  // }
-
   deleteCurso(curso: Curso): Observable<Curso>{
     return this.http.delete<Curso>(`${env.URL}/cursos/${curso.id}`, {
       headers: new HttpHeaders({
@@ -51,7 +40,6 @@ export class CursosService {
     }).pipe(
       catchError(this.capturarError)
     );
-    
   }
 
   addCurso(curso: Curso): Observable<Curso>{
@@ -64,7 +52,6 @@ export class CursosService {
     );
   }
  
-
 
   private capturarError(error: HttpErrorResponse){
     if(error.error instanceof ErrorEvent){

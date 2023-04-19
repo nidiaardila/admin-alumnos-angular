@@ -4,11 +4,8 @@ import { MatDatepicker } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-
 import { Curso } from 'src/app/interfaces/curso';
-
 import { CursosService } from 'src/app/services/cursos.service';
-import { agregarCursoState } from 'src/app/state/curso-state.actions';
 import { CursoState } from 'src/app/state/curso-state.reducer';
 
 
@@ -35,9 +32,9 @@ export class AgregarCursoComponent implements OnInit{
       nombre: ['', Validators.required],
       comision: ['', Validators.required],
       profesor: ['', Validators.required],
-      disponibilidad: ['', Validators.required],
-      fechaInicio: [''],
-      fechaFin: ['']
+      inscripcion: ['si', Validators.required],
+      fechaInicio: ['', Validators.required],
+      fechaFin: ['', Validators.required]
     })
   }
 
@@ -48,7 +45,7 @@ export class AgregarCursoComponent implements OnInit{
       nombre: this.form.value.nombre,
       comision: this.form.value.comision,
       profesor: this.form.value.profesor,
-      disponibilidad: this.form.value.disponibilidad,
+      inscripcion: this.form.value.inscripcion,
       fechaInicio: this.form.value.fechaInicio,
       fechaFin: this.form.value.fechaFin
     }
