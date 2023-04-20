@@ -1,17 +1,19 @@
 
 <div class="container">
-   <div class="row">
+  
+  <div class="row">
       <app-toolbar class="col-12"></app-toolbar>
-   </div>
-   <div class="row">
-     <app-navbar class="col-1 " ></app-navbar>
-
-    <button mat-fab extended color="primary" class="agregar mt-4" routerLink="/dashboard/abm">
+  </div>
+  <div class="row">
+    <div class="row">
+      <app-navbar class="mt-5 "></app-navbar>
+    </div>
+     <button mat-fab extended color="primary" class="agregar mt-4" routerLink="/dashboard/abm">
         <mat-icon>add</mat-icon>
-      Agregar alumno
-    </button>
+        Agregar Alumnos
+      </button>
 <div>
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8 mt-4">
 
   <table mat-table [dataSource]="alumnos$" class="tabla-alumnos" >
   

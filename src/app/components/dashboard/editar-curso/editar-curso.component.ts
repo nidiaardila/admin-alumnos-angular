@@ -68,6 +68,8 @@ export class EditarCursoComponent implements OnInit{
       this.store.dispatch(editarCursoState({curso: curso}));
       this.router.navigate(['dashboard/cursos']);
       this._cursoService.getCursos();
+      alert(`${curso.cod} ${curso.nombre} Editado con exito`);
+
     });
       
   }

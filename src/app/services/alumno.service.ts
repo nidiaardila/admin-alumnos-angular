@@ -38,8 +38,7 @@ export class AlumnoService {
       })
     }).pipe(
       catchError(this.capturarError)
-    );
-    
+    );   
   }
 
   addAlumno(alumno: Alumno): Observable<Alumno>{
@@ -52,7 +51,6 @@ export class AlumnoService {
     );
   }
 
- 
   private capturarError(error: HttpErrorResponse){
     if(error.error instanceof ErrorEvent){
       alert(`Error del lado del cliente: ${error.message}`);
@@ -61,10 +59,5 @@ export class AlumnoService {
     }
 
     return throwError(() => new Error('Error en el procesamiento de alumnos'));
-  }
-   
-  
+  }  
 }
-
-
-

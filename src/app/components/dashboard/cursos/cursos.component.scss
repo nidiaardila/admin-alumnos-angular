@@ -1,16 +1,33 @@
-table {
-    width: 100%;
-    margin-top: 8px;
-  }
+// table {
+//     margin-top: 8px;
+//     width: calc(100% - 100px);
+//     margin-left: 200px;
+//   }
 
-th {
-  width: 20%;
-}
+// th {
+//   width: 20%;
+// }
 
 .acciones {
   cursor: pointer;
 }
 
-.agregar{
-  float: right;
+// .agregar{
+//   float: right;
+// }
+
+// .tabla-ancho-completo {
+//   width: calc(100% - 100px);
+// }
+// .tabla-container {
+//   max-height: 500px; /* Define la altura máxima que deseas */
+//   overflow-y: auto; /* Agrega un scroll vertical para contenido que sobrepase la altura máxima */
+// }
+
+.agregar {
+  position: fixed;
+  top: 55px;
+  right: 350px;
 }
+
+

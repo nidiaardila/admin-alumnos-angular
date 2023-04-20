@@ -44,9 +44,7 @@ export class EditComponent implements OnInit {
 
   updateAlumno(){ 
          
-    this.activatedRoute
-      .paramMap
-      .subscribe(params => {        
+    this.activatedRoute.paramMap.subscribe(params => {        
         this.id2 = String(params.get('id'));
        console.log(params.get('id'));
       });   
@@ -63,6 +61,7 @@ export class EditComponent implements OnInit {
       this.store.dispatch(editarAlumnoState({alumno: alumno}));
       this.router.navigate(['dashboard/alumnos']);
       this._alumnoService.getAlumnos();
+      
     });
     
   }

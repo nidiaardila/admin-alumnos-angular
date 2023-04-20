@@ -1,7 +1,7 @@
-  table {
-      width: 100%;
-      margin-top: 8px;
-    }
+  // table {
+  //     width: 100%;
+  //     margin-top: 8px;
+  //   }
 
   // app-navbar {
   //  margin-right: 100px;
@@ -17,6 +17,12 @@
   cursor: pointer;
 }
 
-.agregar{
-  float: right;
+// .agregar{
+//   float: right;
+// }
+
+.agregar {
+  position: fixed;
+  top: 55px;
+  right: 350px;
 }

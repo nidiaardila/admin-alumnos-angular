@@ -1,2 +1,42 @@
-
-
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12%;
+    height: 100%;
+    background-color: #3f51b5;
+    padding-top: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu ul li {
+    padding: 15px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .menu ul li:first-child {
+    border-top: none;
+  }
+  
+  .menu ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+//   .menu ul li a:hover {
+//     background-color: #b2a0d4;
+//   }
+ 
+  .menu ul li:hover {
+    background-color: #c3b1e5;
+  }
+  
